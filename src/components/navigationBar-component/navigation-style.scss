@@ -1,0 +1,39 @@
+.navigationContainer{
+    height: 17vh;
+    width: 100%;
+    // background-color: red;
+    .navLogoContainer{
+        height: 10vh;
+        // background-color: blue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid #FBDF79;
+        .navLogo{
+            height: 70%;
+            width: auto;
+            // background-color: green;
+        }
+    }
+    .navButtonsContainer{
+        // background-color: green;
+        .gridNavButtons{
+            display: flex;
+            justify-content: space-around;
+            // border-bottom: 1px solid #FBDF79;
+            .grid-box{
+                height: 7vh;
+                width: 20%;
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                .navLogo{
+                    margin: auto;
+                    height: 50%;
+                    width: auto;
+                    filter: drop-shadow(2px 2px 1px #000000);
+                }
+            }
+        }
+    }
+}
