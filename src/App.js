@@ -1,11 +1,12 @@
-import Navigation from './components/navigationBar-component/navigation.jsx';
+import Navigation from './components/navigationBar-3.1-component/navigation.jsx';
+import LandingPage from './components/landing-page/landing.jsx';
 import './App.scss';
 
 function App() {
   return (
     <div className="container">
-      {/* Height 17VH */}
       <Navigation></Navigation>
+      <LandingPage></LandingPage>
     </div>
   );
 }
