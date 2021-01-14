@@ -1,74 +1,80 @@
+// Modules
 import React, { useEffect, useState, useCallback } from 'react';
 import SlidingPanel from 'react-sliding-side-panel';
-import Navigation from './components/containers/navigation/Navigation'
+// Pages
+import About from './components/pages/about/About.jsx'
+import Contact from './components/pages/contact/Contact.jsx'
+import Projects from './components/pages/projects/Projects.jsx'
+import Skills from './components/pages/skills/Skills.jsx'
+// Styles
 import './components/styles/class.scss';
 import './myPortfolio.scss'
 
 const MyPortfolio = () => {
-  const [openPanel, setOpenPanel] = useState({
+  const [panelState, setPanelState] = useState({
     isArrowUp: false,
     isArrowDown: false, 
     ArrowLeft: false,
     ArrowRight: false, 
   });
-
+  
   // Keydown checker callback
   const handleKeyPress = useCallback((event) => {
     switch(event.key){
       case 'ArrowUp':
-        setOpenPanel({ isArrowUp: true })
+        setPanelState({ isArrowUp: true })
         break
       case 'ArrowDown':
-        setOpenPanel({ isArrowDown: true })
+        setPanelState({ isArrowDown: true })
         break
       case 'ArrowLeft':
-        setOpenPanel({ isArrowLeft: true })
+        setPanelState({ isArrowLeft: true })
         break
       case 'ArrowRight':
-        setOpenPanel({ isArrowRight: true })
+        setPanelState({ isArrowRight: true })
         break
       case 'Escape':
-        setOpenPanel({ isArrowUp: false, isArrowDown: false, ArrowLeft: false, ArrowRight: false,  })
+        setPanelState({ isArrowUp: false, isArrowDown: false, ArrowLeft: false, ArrowRight: false,  })
         break
       default:
         break
     }
-  }, [setOpenPanel])
-  
+  }, [setPanelState])
   // Use callback to avoid infinite loop
   useEffect(() => {
-    if (openPanel) {
-        window.addEventListener("keydown", handleKeyPress)
+    if (panelState) {
+      window.addEventListener("keydown", handleKeyPress)
     } else {
-        window.removeEventListener("keydown", handleKeyPress)
+      window.removeEventListener("keydown", handleKeyPress)
     }
     return () => {
       window.removeEventListener("keydown", handleKeyPress)
     } 
-  }, [openPanel, handleKeyPress])
-
+  }, [panelState, handleKeyPress])
   return (
     <div>
-      {/* <button type="button" onClick={() => { setOpenPanel({isArrowUp: true}) }}>
+      <button type="button" onClick={() => { setPanelState({ isArrowUp: true }) }}>
         Left
-      </button> */}
+      </button>
 
-      <SlidingPanel type={'top'} isOpen={openPanel.isArrowUp} backdropClicked={() => setOpenPanel({ isArrowUp: false })} size={100}
+      <SlidingPanel type={'top'} isOpen={panelState.isArrowUp} backdropClicked={() => setPanelState({ isArrowUp: false })} size={100}
         panelClassName="" panelContainerClassName="" noBackdrop={false} >
-        <Navigation></Navigation>
-      </SlidingPanel>
-      <SlidingPanel type={'bottom'} isOpen={openPanel.isArrowDown} backdropClicked={() => setOpenPanel({ isArrowDown: false })} size={100}
-        panelClassName="" panelContainerClassName="" noBackdrop={false} >
-        <Navigation></Navigation>
+        <About></About>
       </SlidingPanel>
 
-      <SlidingPanel type={'right'} isOpen={openPanel.isArrowRight} backdropClicked={() => setOpenPanel({ isArrowRight: false })} size={100}
+      <SlidingPanel type={'bottom'} isOpen={panelState.isArrowDown} backdropClicked={() => setPanelState({ isArrowDown: false })} size={100}
         panelClassName="" panelContainerClassName="" noBackdrop={false} >
-        <Navigation></Navigation>
+        <Contact></Contact>
       </SlidingPanel>
-      <SlidingPanel type={'left'} isOpen={openPanel.isArrowLeft} backdropClicked={() => setOpenPanel({ isArrowLeft: false })} size={100}
+
+      <SlidingPanel type={'right'} isOpen={panelState.isArrowRight} backdropClicked={() => setPanelState({ isArrowRight: false })} size={100}
         panelClassName="" panelContainerClassName="" noBackdrop={false} >
-        <Navigation></Navigation>
+        <Projects></Projects>
+      </SlidingPanel>
+
+      <SlidingPanel type={'left'} isOpen={panelState.isArrowLeft} backdropClicked={() => setPanelState({ isArrowLeft: false })} size={100}
+        panelClassName="" panelContainerClassName="" noBackdrop={false} >
+        <Skills></Skills>
       </SlidingPanel>
     </div>
   );
