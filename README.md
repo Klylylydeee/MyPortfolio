@@ -1,7 +1,4 @@
-# Getting Started with Create React App
+# MyPortfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## MyPortfolio
-
+This project is created with [ReactJS](https://github.com/facebook/create-react-app).
 Please visit https://klylylydeee.com/
