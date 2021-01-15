@@ -1,26 +1,28 @@
 // Modules
 import React, { useEffect, useState, useCallback } from 'react';
 import SlidingPanel from 'react-sliding-side-panel';
+
 // Pages
 import About from './components/pages/about/About.jsx'
 import Contact from './components/pages/contact/Contact.jsx'
 import Projects from './components/pages/projects/Projects.jsx'
 import Skills from './components/pages/skills/Skills.jsx'
 // Styles
+import './components/styles/animationStyles.scss';
 import './components/styles/class.scss';
 import './myPortfolio.scss'
 
 const MyPortfolio = () => {
   const [panelState, setPanelState] = useState({
     isArrowUp: false,
-    isArrowDown: false, 
+    isArrowDown: false,
     ArrowLeft: false,
-    ArrowRight: false, 
+    ArrowRight: false,
   });
-  
+
   // Keydown checker callback
   const handleKeyPress = useCallback((event) => {
-    switch(event.key){
+    switch (event.key) {
       case 'ArrowUp':
         setPanelState({ isArrowUp: true })
         break
@@ -34,9 +36,10 @@ const MyPortfolio = () => {
         setPanelState({ isArrowRight: true })
         break
       case 'Escape':
-        setPanelState({ isArrowUp: false, isArrowDown: false, ArrowLeft: false, ArrowRight: false,  })
+        setPanelState({ isArrowUp: false, isArrowDown: false, ArrowLeft: false, ArrowRight: false, })
         break
       default:
+        // setPanelState({ isArrowUp: false, isArrowDown: false, ArrowLeft: false, ArrowRight: false, })
         break
     }
   }, [setPanelState])
@@ -49,13 +52,23 @@ const MyPortfolio = () => {
     }
     return () => {
       window.removeEventListener("keydown", handleKeyPress)
-    } 
+    }
   }, [panelState, handleKeyPress])
   return (
-    <div>
-      <button type="button" onClick={() => { setPanelState({ isArrowUp: true }) }}>
-        Left
-      </button>
+
+    <div className="main-container">
+      {/* <button onClick={() => { setPanelState({ isArrowDown: true }) }}>a</button>
+      <button onClick={() => { setPanelState({ isArrowRight: true }) }}>a</button>
+      <button onClick={() => { setPanelState({ isArrowLeft: true }) }}>a</button> */}
+      <div className="margin-container">
+        <div className="text-container last-element">
+          <button onClick={() => { setPanelState({ isArrowUp: true }) }}>a</button>
+          <h1 className="name-text">Hi, I am <span className="special-text">Klyde Guevarra</span></h1>
+          <h2 className="message-text">An aspiring <span className="special-text">Web Developer</span> and <span className="special-text">UI/UX Designer</span> based in Silang, Cavite.</h2>
+        </div>
+      </div>
+
+      {/* Sliding Panes */}
 
       <SlidingPanel type={'top'} isOpen={panelState.isArrowUp} backdropClicked={() => setPanelState({ isArrowUp: false })} size={100}
         panelClassName="" panelContainerClassName="" noBackdrop={false} >

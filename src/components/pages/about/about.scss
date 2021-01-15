@@ -4,54 +4,137 @@
   min-height: 100vh;
   width: 100%;
   background-color: #252422;
+  text-align: justify;
   .margin-container {
     .content-box {
       justify-content: space-between;
-      h1 {
-        position: absolute;
-        font-weight: 700;
+      .content {
+        h1 {
+          position: relative;
+          padding-bottom: 5px;
+          text-transform: uppercase;
+          color: white;
+          &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: auto;
+            bottom: 0;
+            height: 5px;
+            width: 100px;
+            background: rgb(255, 204, 0);
+            border-radius: 100px;
+            z-index: 2;
+          }
+          &:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: auto;
+            bottom: 0;
+            height: 5px;
+            width: 35px;
+            background: rgb(255, 204, 0);
+            border-radius: 100px;
+            z-index: 2;
+          }
+        }
+        span {
+          left: 0;
+          top: 0;
+          font-size: 3rem;
+          line-height: 1;
+          font-weight: 900;
+          color: rgba(255, 255, 255, 0.2);
+          display: inline-block;
+          text-transform: uppercase;
+          transform: translateY(-60%);
+          z-index: -1;
+          user-select: none;
+          white-space: nowrap;
+        }
+      }
+      
+      @media only screen and (max-width: $breakpoint-lg) {
+        .image-content-box {
+          width: 300px;
+          img {
+          }
+        }
+      }
+      .image-content-box {
         position: relative;
-        padding-bottom: 5px;
-        text-transform: uppercase;
-        color: white;
+        padding: 0;
+        img {
+          max-height: 300px;
+          max-width: auto;
+        }
         &:before {
           content: "";
           position: absolute;
-          left: 0;
-          top: auto;
-          bottom: 0;
-          height: 5px;
-          width: 100px;
-          background: rgb(255, 204, 0);
-          border-radius: 100px;
           z-index: 2;
+          top: auto;
+          right: auto;
+          bottom: 0;
+          left: 0;
+          height: 5px;
+          width: 60%;
+          transform: translateY(-75%);
+          background: rgb(255, 204, 0);
         }
         &:after {
           content: "";
           position: absolute;
-          left: 0;
-          top: auto;
-          bottom: 0;
-          height: 5px;
-          width: 35px;
-          background: rgb(255, 204, 0);
-          border-radius: 100px;
           z-index: 2;
+          top: 0;
+          right: 0;
+          bottom: auto;
+          left: auto;
+          height: 5px;
+          width: 60%;
+          background: rgb(255, 204, 0);
         }
       }
-      span {
-        left: 0;
-        top: 0;
-        font-size: 3rem;
-        line-height: 1;
-        font-weight: 900;
-        color: rgba(255, 255, 255, 0.2);
-        display: inline-block;
-        text-transform: uppercase;
-        transform: translateY(-60%);
-        z-index: -1;
-        user-select: none;
-        white-space: nowrap;
+      .text-content-box {
+        h3{
+          color: white;
+          font-weight: 100;
+          font-family: $fontThree;
+          padding-left: 30px;
+        }
+        @media only screen and (max-width: $breakpoint-lg) {
+          h3{
+            padding-top: 30px;
+            padding-left: 0;
+          }
+        }
+      }
+      .background-box {
+        padding-top: 30px;
+        &:nth-child(1) {
+          padding-right: 30px;
+        }
+        @media only screen and (max-width: $breakpoint-lg) {
+          &:nth-child(1) {
+            padding-right: 0;
+          }
+        }
+        h2 {
+          color: white;
+        }
+        ul {
+          list-style: none;
+          color: white;
+          font-family: $fontTwo;
+          font-weight: 300;
+          .parent-li{
+            padding: 10px 0;
+            .details-text{
+              font-weight: 100;
+              font-family: $fontThree;
+            }
+          }
+        }
       }
     }
   }

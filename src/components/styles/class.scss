@@ -1,38 +1,60 @@
 @import "./variables.scss";
 
-.flex{
+.flex {
     display: flex;
 }
 
-.margin-container{
+.flex-reverse {
+    // Remember to reverse flex direction for mobile responsive
+    display: flex;
+}
+
+.margin-container {
+    height: 100%;
     margin: 0 30px 30px 30px;
+}
+
+.first-element {
     padding-top: 30px;
 }
+.last-element {
+    padding-bottom: 30px;
+}
+.special-text {
+    color: $colorThree;
+}
 
-h1{
+h1 {
+    font-weight: 600;
     font-family: $fontOne;
 }
 
-h2{
+h2 {
+    font-weight: 600;
     font-family: $fontOne;
 }
 
-h3{
-
-}
-
-h4{
-
-}
-
-h5{
-
-}
-
-h6{
-
-}
-
-span{
+h3 {
+    font-weight: 600;
     font-family: $fontOne;
+}
+
+h4 {
+}
+
+h5 {
+}
+
+h6 {
+}
+
+span {
+    font-family: $fontOne;
+}
+
+@media only screen and (max-width: $breakpoint-lg) {
+    .flex-reverse {
+        display: flex;
+        flex-direction: column;
+    }
 }

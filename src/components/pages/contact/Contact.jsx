@@ -1,4 +1,6 @@
 import { Scrollbars } from 'react-custom-scrollbars';
+import Zoom from 'react-reveal/Zoom';
+import Fade from 'react-reveal/Fade'; 
 import '../../styles/class.scss';
 import './contact.scss';
 
@@ -12,9 +14,13 @@ const Contact = () => {
       <div className="contact-container">
         <div className="margin-container">
           <div className="content-box flex">
-            <div className="content">
-              <h1>Contacts</h1>
-              <span>Contacts</span>
+            <div className="content first-element">
+              <Zoom>
+                <h1>Contact</h1>
+                <Fade top cascade>
+                  <span>Contact</span>
+                </Fade>
+              </Zoom>
             </div>
             <div className="content">
               {/* exit */}
