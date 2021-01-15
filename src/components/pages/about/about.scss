@@ -8,6 +8,17 @@
   .margin-container {
     .content-box {
       justify-content: space-between;
+      &:nth-child(1){
+        align-items: center;
+      }
+      &:nth-child(2){
+        padding: 30px 0;
+      }
+      @media only screen and (max-width: $breakpoint-lg) {
+        &:nth-child(2){
+          padding: 0;
+        }
+      }
       .content {
         h1 {
           position: relative;
@@ -53,8 +64,39 @@
           user-select: none;
           white-space: nowrap;
         }
+        button{
+          background: none;
+          color: inherit;
+          border: none;
+          padding: 0;
+          font: inherit;
+          cursor: pointer;
+          outline: inherit;
+        }
+        .nav-icon{
+          background-color: blue;
+          margin: 1em;
+          width: 40px;
+          &::after{
+            background-color: #fff;
+            border-radius: 3px;
+            content: '';
+            display: block;
+            height: 5px;
+            margin: 7px 0;
+            transition: all .2s ease-in-out;
+          }
+          &::before{
+            background-color: #fff;
+            border-radius: 3px;
+            content: '';
+            display: block;
+            height: 5px;
+            margin: 7px 0;
+            transition: all .2s ease-in-out;
+          }
+        }
       }
-      
       @media only screen and (max-width: $breakpoint-lg) {
         .image-content-box {
           width: 300px;

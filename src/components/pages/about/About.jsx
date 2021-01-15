@@ -1,3 +1,5 @@
+import { PaneContext } from '../../Contexts/PaneContext.jsx'
+import { useContext } from 'react'
 import { Scrollbars } from 'react-custom-scrollbars';
 import Zoom from 'react-reveal/Zoom';
 import Fade from 'react-reveal/Fade';
@@ -5,17 +7,18 @@ import Rotate from 'react-reveal/Rotate';
 import '../../styles/class.scss';
 import './about.scss';
 
-const About = () => {
 
-  console.log('About Loaded')
+const About = () =>{
 
+  const { setPanelState } = useContext(PaneContext);
+  
   return (
 
     <Scrollbars universal thumbMinSize={100}>
       <div className="about-container">
         <div className="margin-container">
-          <div className="content-box flex">
-            <div className="content first-element">
+          <div className="content-box flex first-element">
+            <div className="content ">
               <Zoom>
                 <h1>About Me</h1>
                 <Fade top cascade>
@@ -24,7 +27,11 @@ const About = () => {
               </Zoom>
             </div>
             <div className="content">
-              {/* exit */}
+              <button onClick={ () => {
+                setPanelState({isArrowUp: false})
+              }}>
+                <div className="nav-icon"></div>
+              </button>
             </div>
           </div>
           <div className="content-box flex-reverse">

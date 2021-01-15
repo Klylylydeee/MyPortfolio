@@ -1,7 +1,7 @@
 // Modules
 import React, { useEffect, useState, useCallback } from 'react';
 import SlidingPanel from 'react-sliding-side-panel';
-
+import { PaneContext } from './components/Contexts/PaneContext.jsx'
 // Pages
 import About from './components/pages/about/About.jsx'
 import Contact from './components/pages/contact/Contact.jsx'
@@ -18,7 +18,7 @@ const MyPortfolio = () => {
     isArrowDown: false,
     ArrowLeft: false,
     ArrowRight: false,
-  });
+  }); 
 
   // Keydown checker callback
   const handleKeyPress = useCallback((event) => {
@@ -54,6 +54,7 @@ const MyPortfolio = () => {
       window.removeEventListener("keydown", handleKeyPress)
     }
   }, [panelState, handleKeyPress])
+
   return (
 
     <div className="main-container">
@@ -62,7 +63,7 @@ const MyPortfolio = () => {
       <button onClick={() => { setPanelState({ isArrowLeft: true }) }}>a</button> */}
       <div className="margin-container">
         <div className="text-container last-element">
-          <button onClick={() => { setPanelState({ isArrowUp: true }) }}>a</button>
+          <button onClick={() => { setPanelState(true) }}>a</button>
           <h1 className="name-text">Hi, I am <span className="special-text">Klyde Guevarra</span></h1>
           <h2 className="message-text">An aspiring <span className="special-text">Web Developer</span> and <span className="special-text">UI/UX Designer</span> based in Silang, Cavite.</h2>
         </div>
@@ -72,22 +73,24 @@ const MyPortfolio = () => {
 
       <SlidingPanel type={'top'} isOpen={panelState.isArrowUp} backdropClicked={() => setPanelState({ isArrowUp: false })} size={100}
         panelClassName="" panelContainerClassName="" noBackdrop={false} >
-        <About></About>
+        <PaneContext.Provider value={{ panelState, setPanelState }}>
+        <About/>
+        </PaneContext.Provider>
       </SlidingPanel>
 
       <SlidingPanel type={'bottom'} isOpen={panelState.isArrowDown} backdropClicked={() => setPanelState({ isArrowDown: false })} size={100}
         panelClassName="" panelContainerClassName="" noBackdrop={false} >
-        <Contact></Contact>
+        <Contact/>
       </SlidingPanel>
 
       <SlidingPanel type={'right'} isOpen={panelState.isArrowRight} backdropClicked={() => setPanelState({ isArrowRight: false })} size={100}
         panelClassName="" panelContainerClassName="" noBackdrop={false} >
-        <Projects></Projects>
+        <Projects/>
       </SlidingPanel>
 
       <SlidingPanel type={'left'} isOpen={panelState.isArrowLeft} backdropClicked={() => setPanelState({ isArrowLeft: false })} size={100}
         panelClassName="" panelContainerClassName="" noBackdrop={false} >
-        <Skills></Skills>
+        <Skills/>
       </SlidingPanel>
     </div>
   );
