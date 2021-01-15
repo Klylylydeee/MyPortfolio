@@ -58,8 +58,11 @@
       @media only screen and (max-width: $breakpoint-lg) {
         .image-content-box {
           width: 300px;
-          img {
-          }
+        }
+      }
+      @media only screen and (max-width: 1310px) {
+        .image-content-box {
+          height: 305px;
         }
       }
       .image-content-box {
