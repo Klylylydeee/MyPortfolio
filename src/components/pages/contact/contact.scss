@@ -4,9 +4,19 @@
   min-height: 100vh;
   width: 100%;
   background-color: #252422;
+  text-align: justify;
+  color: white;
   .margin-container {
     .content-box {
       justify-content: space-between;
+      &:nth-child(2) {
+        align-items: center;
+      }
+      @media only screen and (max-width: $breakpoint-lg) {
+        &:nth-child(2) {
+          padding: 0 0 20px 0;
+        }
+      }
       .content {
         h1 {
           position: absolute;
@@ -52,6 +62,103 @@
           z-index: -1;
           user-select: none;
           white-space: nowrap;
+        }
+      }
+      .button-container{
+        height: 50px;
+        width: 70px;
+        margin-top: 10px;
+        background: none;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .exit{
+          position: relative;
+          background-color: $colorThree;
+          border-radius: 360px;
+          height: 15px;
+          width: 15px;
+          &::after{
+            content: "";
+            position: absolute;
+            background-color: $colorThree;
+            border-radius: 360px;
+            height: 15px;
+            width: 15px;
+            transform: translateX(-165%);
+          }
+          &::before{
+            content: "";
+            position: absolute;
+            background-color: $colorThree;
+            border-radius: 360px;
+            height: 15px;
+            width: 15px;
+            transform: translateX(65%);
+          }
+        }
+      }
+      .message-content-box {
+        width: 50%;
+        padding-right: 30px;
+      }
+      @media only screen and (max-width: $breakpoint-lg) {
+        .message-content-box {
+          padding-right: 0px;
+          width: 100%;
+        }
+      }
+      .message-form-content-box {
+        background-color: $colorThree;
+        border-radius: 30px;
+        padding: 30px;
+        width: 50%;
+        .form-content {
+          input {
+            font-family: $fontThree;
+            background-color: transparent;
+            border: 1px solid rgba(254, 254, 254, 1);
+            border-radius: 5px;
+            height: 30px;
+            width: 100%;
+          }
+          textarea {
+            font-family: $fontThree;
+            background-color: transparent;
+            border: 1px solid rgba(254, 254, 254, 1);
+            border-radius: 5px;
+            width: 100%;
+          }
+        }
+        button {
+          width: 30%;
+          font-family: $fontThree;
+          text-transform: uppercase;
+        }
+      }
+      @media only screen and (max-width: $breakpoint-lg) {
+        .message-form-content-box {
+          margin: 30px 0;
+          padding: 15px;
+          width: 90%;
+          .form-content {
+            input {
+              font-family: $fontThree;
+              background-color: transparent;
+              border: 1px solid rgba(254, 254, 254, 1);
+              border-radius: 5px;
+              height: 15px;
+              width: 100%;
+            }
+            textarea {
+              font-family: $fontThree;
+              background-color: transparent;
+              border: 1px solid rgba(254, 254, 254, 1);
+              border-radius: 5px;
+              width: 100%;
+            }
+          }
         }
       }
     }

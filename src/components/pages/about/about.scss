@@ -8,14 +8,11 @@
   .margin-container {
     .content-box {
       justify-content: space-between;
-      &:nth-child(1){
-        align-items: center;
-      }
-      &:nth-child(2){
+      &:nth-child(2) {
         padding: 30px 0;
       }
       @media only screen and (max-width: $breakpoint-lg) {
-        &:nth-child(2){
+        &:nth-child(2) {
           padding: 0;
         }
       }
@@ -64,7 +61,7 @@
           user-select: none;
           white-space: nowrap;
         }
-        button{
+        button {
           background: none;
           color: inherit;
           border: none;
@@ -73,44 +70,47 @@
           cursor: pointer;
           outline: inherit;
         }
-        .nav-icon{
-          background-color: blue;
-          margin: 1em;
-          width: 40px;
-          &::after{
-            background-color: #fff;
-            border-radius: 3px;
-            content: '';
-            display: block;
-            height: 5px;
-            margin: 7px 0;
-            transition: all .2s ease-in-out;
+      }
+      .button-container {
+          height: 50px;
+          width: 70px;
+          margin-top: 10px;
+          background: none;
+          border: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          .exit {
+            position: relative;
+            background-color: $colorThree;
+            border-radius: 360px;
+            height: 15px;
+            width: 15px;
+            &::after {
+              content: "";
+              position: absolute;
+              background-color: $colorThree;
+              border-radius: 360px;
+              height: 15px;
+              width: 15px;
+              transform: translateX(-165%);
+            }
+            &::before {
+              content: "";
+              position: absolute;
+              background-color: $colorThree;
+              border-radius: 360px;
+              height: 15px;
+              width: 15px;
+              transform: translateX(65%);
+            }
           }
-          &::before{
-            background-color: #fff;
-            border-radius: 3px;
-            content: '';
-            display: block;
-            height: 5px;
-            margin: 7px 0;
-            transition: all .2s ease-in-out;
-          }
         }
-      }
-      @media only screen and (max-width: $breakpoint-lg) {
-        .image-content-box {
-          width: 300px;
-        }
-      }
-      @media only screen and (max-width: 1310px) {
-        .image-content-box {
-          height: 305px;
-        }
-      }
       .image-content-box {
         position: relative;
         padding: 0;
         img {
+          border-radius: 10px 0 10px 0;
           max-height: 300px;
           max-width: auto;
         }
@@ -140,15 +140,25 @@
           background: rgb(255, 204, 0);
         }
       }
+      @media only screen and (max-width: $breakpoint-lg) {
+        .image-content-box {
+          width: 300px;
+        }
+      }
+      @media only screen and (max-width: 1310px) {
+        .image-content-box {
+          height: 305px;
+        }
+      }
       .text-content-box {
-        h3{
+        h3 {
           color: white;
           font-weight: 100;
           font-family: $fontThree;
           padding-left: 30px;
         }
         @media only screen and (max-width: $breakpoint-lg) {
-          h3{
+          h3 {
             padding-top: 30px;
             padding-left: 0;
           }
@@ -172,9 +182,9 @@
           color: white;
           font-family: $fontTwo;
           font-weight: 300;
-          .parent-li{
+          .parent-li {
             padding: 10px 0;
-            .details-text{
+            .details-text {
               font-weight: 100;
               font-family: $fontThree;
             }

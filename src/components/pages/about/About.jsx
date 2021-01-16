@@ -1,9 +1,12 @@
+// Context API
 import { PaneContext } from '../../Contexts/PaneContext.jsx'
 import { useContext } from 'react'
+// Modules
 import { Scrollbars } from 'react-custom-scrollbars';
 import Zoom from 'react-reveal/Zoom';
 import Fade from 'react-reveal/Fade';
 import Rotate from 'react-reveal/Rotate';
+// Styles
 import '../../styles/class.scss';
 import './about.scss';
 
@@ -11,6 +14,7 @@ import './about.scss';
 const About = () =>{
 
   const { setPanelState } = useContext(PaneContext);
+  console.log('About Loaded')
   
   return (
 
@@ -26,19 +30,14 @@ const About = () =>{
                 </Fade>
               </Zoom>
             </div>
-            <div className="content">
-              <button onClick={ () => {
-                setPanelState({isArrowUp: false})
-              }}>
-                <div className="nav-icon"></div>
-              </button>
-            </div>
+            <button className="button-container" onClick={ () => { setPanelState({isArrowDown: false}) }}>
+              <div className="exit"></div>
+            </button>
           </div>
           <div className="content-box flex-reverse">
             <Fade left delay={300}>
               <div className="image-content-box">
                 <img src="https://i.ibb.co/gDdxz5c/IMG-20191130-102239-800.jpg" alt="IMG-20191130-102239-800" border="0" />
-
               </div>
             </Fade>
             <div className="text-content-box">
@@ -126,6 +125,9 @@ const About = () =>{
                 </ul>
               </div>
             </Rotate>
+          </div>
+          <div className="content-box">
+            <button onClick={ () => { setPanelState({isArrowUp: false}) }}>EXIT</button>
           </div>
         </div>
       </div>
