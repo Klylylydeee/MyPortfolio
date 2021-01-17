@@ -1,5 +1,4 @@
 @import "../../styles/variables.scss";
-
 .contact-container {
   min-height: 100vh;
   width: 100%;
@@ -23,6 +22,9 @@
         background-position-y: 50%;
         background-position-x: 50%;
         align-items: center;
+      }
+      &:nth-child(4){
+        display: none;
       }
       @media only screen and (max-width: $breakpoint-lg) {
         &:nth-child(2) {
@@ -218,6 +220,7 @@
       .contact-flex-container {
         font-family: $fontTwo;
         font-weight: 600;
+        text-align: center;
         p{
           text-transform: uppercase;
         }
@@ -227,6 +230,7 @@
           list-style: none;
           li{
             display: flex;
+            justify-content: center;
             align-items: center;
             font-weight: 300;
             padding: 10px 0;
@@ -241,17 +245,6 @@
             a{
               color: white;
               text-decoration: none;
-            }
-            &:hover{
-              img{
-                background-color: $colorThree;
-                transition: .5s ease-in;
-              }
-              a{
-                font-family: $fontOne;
-                color: $colorThree;
-                transition: .5s ease-in;
-              }
             }
           }
         }
@@ -272,6 +265,16 @@
         .contact-flex-container {
           text-align: left;
           justify-content: center;
+          ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            li{
+              display: flex;
+              justify-content: left;
+              align-items: left;
+            }
+          }
           .address-container {
             padding-top: 15px;
             width: 100%;

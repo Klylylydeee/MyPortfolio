@@ -31,6 +31,7 @@
       }
       @media only screen and (max-width: $breakpoint-lg) {
         &:nth-child(1) {
+          padding: 30px;
           background-position-y: 20%;
           background-position-x: 20%;
         }
@@ -185,6 +186,7 @@
       }
       .text-content-box {
         align-items: center;
+        padding-top: 30px;
         h3 {
           color: white;
           font-weight: 100;

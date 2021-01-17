@@ -13,6 +13,11 @@ import './contact.scss';
 import icloud from '../../../assets/049-icloud.png';
 import gmail from '../../../assets/063-gmail.png';
 import microsoft from '../../../assets/042-microsoft.png';
+import overflow from '../../../assets/015-overflowing.png';
+import messenger from '../../../assets/025-messenger.png';
+import github from '../../../assets/032-github.png';
+import linkedin from '../../../assets/052-linkedin.png';
+import reddit from '../../../assets/072-reddit.png';
 
 const Contact = () => {
 
@@ -43,50 +48,37 @@ const Contact = () => {
             </Zoom>
             <div className="contact-flex-container flex-reverse">
               <div className="address-container">
-                <Zoom cascade>
+                <Zoom cascade> 
                   <p>Social Medias</p>
                   <ul>
-                    <li >
-                      <img src={icloud} alt="" />
-                      <a href="mailto:kguevarra13@icloud.com?subject = Feedback&body = Message">
-                        kguevarra13@icloud.com
-                      </a>
-                    </li>
                     <li>
-                      <img src={gmail} alt="" />
-                      <a href="mailto:klylylydeee@gmail.com?subject = Feedback&body = Message">
-                        klylylydeee@gmail.com
-                      </a>
-                    </li>
-                    <li>
-                      <img src={microsoft} alt="" />
+                      <img src={messenger} alt="" />
                       <a href="mailto:2031780@aup.edu.ph?subject = Feedback&body = Message">
-                        2031780@aup.edu.ph
-                      </a>
-                    </li>
-                  </ul>
-                </Zoom>
-              </div>
-              <div className="phone-container">
-                <Zoom cascade>
-                  <p>Contact Number</p>
-                  <ul>
-                    <li >
-                      <img src={icloud} alt="" />
-                      <a href="mailto:kguevarra13@icloud.com?subject = Feedback&body = Message">
-                        kguevarra13@icloud.com
+                        Klyde Guevarra
                       </a>
                     </li>
                     <li>
-                      <img src={gmail} alt="" />
-                      <a href="mailto:klylylydeee@gmail.com?subject = Feedback&body = Message">
-                        klylylydeee@gmail.com
-                      </a>
-                    </li>
-                    <li>
-                      <img src={microsoft} alt="" />
+                      <img src={linkedin} alt="" />
                       <a href="mailto:2031780@aup.edu.ph?subject = Feedback&body = Message">
-                        2031780@aup.edu.ph
+                        Klyde Guevarra
+                      </a>
+                    </li>
+                    <li >
+                      <img src={github} alt="" />
+                      <a href="mailto:kguevarra13@icloud.com?subject = Feedback&body = Message">
+                        Klylylydeee
+                      </a>
+                    </li>
+                    <li>
+                      <img src={overflow} alt="" />
+                      <a href="mailto:klylylydeee@gmail.com?subject = Feedback&body = Message">
+                        Klylylydeee
+                      </a>
+                    </li>
+                    <li>
+                      <img src={reddit} alt="" />
+                      <a href="mailto:2031780@aup.edu.ph?subject = Feedback&body = Message">
+                        Klylylydeee
                       </a>
                     </li>
                   </ul>
@@ -117,6 +109,25 @@ const Contact = () => {
                   </ul>
                 </Zoom>
               </div>
+              <div className="phone-container">
+                <Zoom cascade>
+                  <p>Contact Number</p>
+                  <ul>
+                    <li >
+                      <img src={icloud} alt=""  />
+                      <a href="tel:+63-947-630-3740">
+                        09476303740
+                      </a>
+                    </li>
+                    <li>
+                      <img src={gmail} alt="" />
+                      <a href="tel:+63-945-146-7612">
+                        09451467612
+                      </a>
+                    </li>
+                  </ul>
+                </Zoom>
+              </div>
             </div>
           </div>
           <div className="content-box flex-reverse">
@@ -132,7 +143,7 @@ const Contact = () => {
                 <div className="text-divisor">
                   <textarea rows="8" placeholder="Message"></textarea>
                 </div>
-                <div className="divisor flex-reverse">
+                <div className="divisor flex-reverse last-element">
                   <div className="form-divisor">
                     <div className="form-content">
                       <input type="text" placeholder="Full Name" />
@@ -146,9 +157,6 @@ const Contact = () => {
               </Roll>
             </div>
           </div>
-          {/* <div className="content-box">
-            <button onClick={() => { setPanelState({ isArrowDown: false }) }}>EXIT</button>
-          </div> */}
         </div>
       </div>
     </Scrollbars>

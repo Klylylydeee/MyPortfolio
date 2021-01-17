@@ -79,26 +79,26 @@ const MyPortfolio = () => {
       {/* Sliding Panes */}
 
       <SlidingPanel type={'top'} isOpen={panelState.isArrowUp} backdropClicked={() => setPanelState({ isArrowUp: false })} size={100}
-        panelClassName="" panelContainerClassName="" noBackdrop={false} >
+        panelClassName="" panelContainerClassName="" noBackdrop={true} >
         <PaneContext.Provider value={{ panelState, setPanelState }}>
         <About/>
         </PaneContext.Provider>
       </SlidingPanel>
 
       <SlidingPanel type={'bottom'} isOpen={panelState.isArrowDown} backdropClicked={() => setPanelState({ isArrowDown: false })} size={100}
-        panelClassName="" panelContainerClassName="" noBackdrop={false} >
+        panelClassName="" panelContainerClassName="" noBackdrop={true} >
         <PaneContext.Provider value={{ panelState, setPanelState }}>
         <Contact/>
         </PaneContext.Provider>
       </SlidingPanel>
 
       <SlidingPanel type={'right'} isOpen={panelState.isArrowRight} backdropClicked={() => setPanelState({ isArrowRight: false })} size={100}
-        panelClassName="" panelContainerClassName="" noBackdrop={false} >
+        panelClassName="" panelContainerClassName="" noBackdrop={true} >
         <Projects/>
       </SlidingPanel>
 
       <SlidingPanel type={'left'} isOpen={panelState.isArrowLeft} backdropClicked={() => setPanelState({ isArrowLeft: false })} size={100}
-        panelClassName="" panelContainerClassName="" noBackdrop={false} >
+        panelClassName="" panelContainerClassName="" noBackdrop={true} >
         <Skills/>
       </SlidingPanel>
     </div>

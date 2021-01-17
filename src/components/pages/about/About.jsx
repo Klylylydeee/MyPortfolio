@@ -113,7 +113,7 @@ const About = () => {
                     <li className="special-text">Elementary</li>
                     <li>Adventist University of the Philippines</li>
                     <li>2006 - 2012</li>
-                    <li className="details-text">I am currently a student studying under the program of Bachelor of Science in Information
+                    <li className="details-text ">I am currently a student studying under the program of Bachelor of Science in Information
                     Technology in Adventist University of the Philippines. I am currently a student studying under
                     the program of Bachelor of Science in Information Technology in Adventist University of the
                         Philippines. </li>
