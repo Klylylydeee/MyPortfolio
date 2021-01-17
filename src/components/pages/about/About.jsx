@@ -36,27 +36,19 @@ const About = () =>{
           </div>
           <div className="content-box flex-reverse">
             <Fade left delay={300}>
-              <div className="image-content-box">
+              <div className="image-content-box flex">
                 <img src="https://i.ibb.co/gDdxz5c/IMG-20191130-102239-800.jpg" alt="IMG-20191130-102239-800" border="0" />
               </div>
             </Fade>
-            <div className="text-content-box">
+            <div className="text-content-box flex">
               <Fade left delay={500}>
                 <h3>Hi, I am <span className="special-text">Klyde Guevarra</span>. An aspiring <span className="special-text">Web Developer</span> and 
                   <span className="special-text"> UI/UX Designer</span> based in Silang, Cavite.
-                  I am currently a student studying under the program of Bachelor of Science in Information 
-                  Technology in Adventist University of the Philippines. I am currently a student studying under 
-                  the program of Bachelor of Science in Information Technology in Adventist University of the 
-                  Philippines. I am currently a student studying under the program of Bachelor of Science in 
-                  Information Technology in Adventist University of the Philippines. I am currently a student studying under the program of Bachelor of Science in Information 
-                  Technology in Adventist University of the Philippines. I am currently a student studying under 
-                  the program of Bachelor of Science in Information Technology in Adventist University of the 
-                  Philippines. I am currently a student studying under the program of Bachelor of Science in 
-                  Information Technology in Adventist University of the Philippines. I am currently a student studying under the program of Bachelor of Science in Information 
-                  Technology in Adventist University of the Philippines. I am currently a student studying under 
-                  the program of Bachelor of Science in Information Technology in Adventist University of the 
-                  Philippines. I am currently a student studying under the program of Bachelor of Science in 
-                  Information Technology in Adventist University of the Philippines.</h3>
+                  Currently, I am still a student studying under the program of Bachelor of Science in Information 
+                  Technology at the Adventist University of the Philippines. I love learning and building things that make a difference for you and me. 
+                  {/* I am still learning some new frontend Javascript frameworks/library and backend technologies and as for my UI/UX skills, I am hoping to learn 
+                  more about prototyping, interaction and visual design, and typography.  */}
+                  <span className="special-text"> There’s so much to know and learn from the ever-growing world of technology. </span>But hey, nice to meet you!</h3>
               </Fade>
             </div>
           </div>

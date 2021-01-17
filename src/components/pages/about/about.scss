@@ -4,16 +4,43 @@
   min-height: 100vh;
   width: 100%;
   background-color: #252422;
-  text-align: justify;
+  // text-align: justify;
   .margin-container {
     .content-box {
+      padding:  0 30px 30px 30px;
       justify-content: space-between;
+      &:nth-child(1) {
+        padding: 30px;
+        background-image: url('https://i.ibb.co/PTJ1B99/666324.jpg');
+        background-size: cover;
+        background-attachment: fixed;
+        background-color: rgba(0,0,0,.70);
+        background-blend-mode: multiply;
+        background-position-y: 100%;
+        background-position-x: 100%;
+      }
       &:nth-child(2) {
-        padding: 30px 0;
+        padding-bottom: 70px;
+        background-image: url('https://i.ibb.co/PTJ1B99/666324.jpg');
+        background-size: cover;
+        background-attachment: fixed;
+        background-color: rgba(0,0,0,.70);
+        background-blend-mode: multiply;
+        background-position-y: 100%;
+        background-position-x: 100%;
       }
       @media only screen and (max-width: $breakpoint-lg) {
+        &:nth-child(1) {
+          background-position-y: 20%;
+          background-position-x: 20%;
+        }
         &:nth-child(2) {
-          padding: 0;
+          padding: 0 30px 50px 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-position-y: 20%;
+          background-position-x: 20%;
         }
       }
       .content {
@@ -104,6 +131,36 @@
               width: 15px;
               transform: translateX(65%);
             }
+            &:hover{
+              animation: mainMoves .5s infinite;
+              &::after{
+                animation: afterMoves .5s infinite;
+              }
+              &::before{
+                animation: beforeMoves .5s infinite;
+              }
+              @keyframes mainMoves {
+                0%   {transform: translateY(30%);}
+                25%  {transform: translateY(-30%);}
+                50%  {transform: translateY(30%);}
+                75%  {transform: translateY(-30%);}
+                100% {transform: translateY(30%);}
+              }
+              @keyframes afterMoves {
+                0%   {transform: translateX(-165%) translateY(30%);}
+                25%  {transform: translateX(-165%) translateY(-30%);}
+                50%  {transform: translateX(-165%) translateY(30%);}
+                75%  {transform: translateX(-165%) translateY(-30%);}
+                100% {transform: translateX(-165%) translateY(30%);}
+              }
+              @keyframes beforeMoves {
+                0%   {transform: translateX(65%) translateY(30%);}
+                25%  {transform: translateX(65%) translateY(-30%);}
+                50%  {transform: translateX(65%) translateY(30%);}
+                75%  {transform: translateX(65%) translateY(-30%);}
+                100% {transform: translateX(65%) translateY(30%);}
+              }
+            }
           }
         }
       .image-content-box {
@@ -124,8 +181,8 @@
           left: 0;
           height: 5px;
           width: 60%;
-          transform: translateY(-75%);
           background: rgb(255, 204, 0);
+          border-radius: 100px;
         }
         &:after {
           content: "";
@@ -138,24 +195,30 @@
           height: 5px;
           width: 60%;
           background: rgb(255, 204, 0);
+          border-radius: 100px;
         }
       }
       @media only screen and (max-width: $breakpoint-lg) {
         .image-content-box {
+          height: 300px;
           width: 300px;
-        }
-      }
-      @media only screen and (max-width: 1310px) {
-        .image-content-box {
-          height: 305px;
+          img{
+            &::before{
+              transform: translateY(-75%);
+            }
+          }
         }
       }
       .text-content-box {
+        align-items: center;
         h3 {
           color: white;
           font-weight: 100;
           font-family: $fontThree;
           padding-left: 30px;
+          .special-text{
+            font-family: $fontThree;
+          }
         }
         @media only screen and (max-width: $breakpoint-lg) {
           h3 {
