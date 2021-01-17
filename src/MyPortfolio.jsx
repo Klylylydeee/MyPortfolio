@@ -61,12 +61,18 @@ const MyPortfolio = () => {
       {/* <button onClick={() => { setPanelState({ isArrowDown: true }) }}>a</button>
       <button onClick={() => { setPanelState({ isArrowRight: true }) }}>a</button>
       <button onClick={() => { setPanelState({ isArrowLeft: true }) }}>a</button> */}
-      <div className="margin-container">
+      <div className="home-container">
         <div className="text-container last-element">
-          <button onClick={() => { setPanelState({ isArrowUp: true }) }}>UP</button>
-          <button onClick={() => { setPanelState({ isArrowDown: true }) }}>DOWN</button>
           <h1 className="name-text">Hi, I am <span className="special-text">Klyde Guevarra</span></h1>
           <h2 className="message-text">An aspiring <span className="special-text">Web Developer</span> and <span className="special-text">UI/UX Designer</span> based in Silang, Cavite.</h2>
+          <h3>To navigate press or click
+            <span className="special-text">
+              <button onClick={() => { setPanelState({ isArrowUp: true }) }}> About Me </button>
+              <button onClick={() => { setPanelState({ isArrowDown: true }) }}> Contacts </button>
+              <button onClick={() => { setPanelState({ isArrowLeft: true }) }}> Skills </button>
+              <button onClick={() => { setPanelState({ isArrowRight: true }) }}> <h3>Projects</h3> </button>
+            </span>
+          </h3>
         </div>
       </div>
 

@@ -8,18 +8,32 @@
   color: white;
   .margin-container {
     .content-box {
+      padding: 0 30px 30px 30px;
       justify-content: space-between;
-      &:nth-child(2) {
+      &:nth-child(1) {
+        padding: 30px 30px 0 30px;
+      }
+      &:nth-child(3) {
+        padding: 0;
+        background-image: url("https://i.ibb.co/Q9CqDhT/597081f96aeb8b86c9f70052a34be782.jpg");
+        background-size: cover;
+        background-attachment: fixed;
+        background-color: rgba(0, 0, 0, 0.7);
+        background-blend-mode: multiply;
+        background-position-y: 50%;
+        background-position-x: 50%;
         align-items: center;
       }
       @media only screen and (max-width: $breakpoint-lg) {
         &:nth-child(2) {
           padding: 0 0 20px 0;
         }
+        &:nth-child(3) {
+          padding: 30px 30px 0 30px;
+        }
       }
       .content {
         h1 {
-          position: absolute;
           position: relative;
           padding-bottom: 5px;
           text-transform: uppercase;
@@ -64,7 +78,7 @@
           white-space: nowrap;
         }
       }
-      .button-container{
+      .button-container {
         height: 50px;
         width: 70px;
         margin-top: 10px;
@@ -73,13 +87,13 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        .exit{
+        .exit {
           position: relative;
           background-color: $colorThree;
           border-radius: 360px;
           height: 15px;
           width: 15px;
-          &::after{
+          &::after {
             content: "";
             position: absolute;
             background-color: $colorThree;
@@ -88,7 +102,7 @@
             width: 15px;
             transform: translateX(-165%);
           }
-          &::before{
+          &::before {
             content: "";
             position: absolute;
             background-color: $colorThree;
@@ -97,67 +111,178 @@
             width: 15px;
             transform: translateX(65%);
           }
+          &:hover {
+            animation: mainMoves 1s infinite;
+            @keyframes mainMoves {
+              33% {
+                transform: translateY(-30%);
+              }
+              66% {
+                transform: translateY(30%);
+              }
+              99% {
+                transform: translateY(-30%);
+              }
+            }
+          }
         }
       }
       .message-content-box {
-        width: 50%;
-        padding-right: 30px;
-      }
-      @media only screen and (max-width: $breakpoint-lg) {
-        .message-content-box {
-          padding-right: 0px;
-          width: 100%;
-        }
+        padding: 30px;
+        width: 70%;
       }
       .message-form-content-box {
         background-color: $colorThree;
-        border-radius: 30px;
-        padding: 30px;
-        width: 50%;
-        .form-content {
-          input {
-            font-family: $fontThree;
-            background-color: transparent;
-            border: 1px solid rgba(254, 254, 254, 1);
-            border-radius: 5px;
-            height: 30px;
-            width: 100%;
-          }
+        padding: 60px 30px;
+        height: 100%;
+        width: 30%;
+        .text-divisor {
           textarea {
+            outline: none;
             font-family: $fontThree;
             background-color: transparent;
-            border: 1px solid rgba(254, 254, 254, 1);
+            border: 2px solid rgba(254, 254, 254, 1);
             border-radius: 5px;
             width: 100%;
           }
         }
-        button {
-          width: 30%;
-          font-family: $fontThree;
-          text-transform: uppercase;
+        .divisor {
+          .form-divisor {
+            width: 80%;
+            .form-content {
+              padding: 0 30px 0 0;
+              input {
+                font-family: $fontThree;
+                background-color: transparent;
+                border: 2px solid rgba(254, 254, 254, 1);
+                border-top: none;
+                border-left: none;
+                border-right: none;
+                height: 30px;
+                width: 100%;
+                padding: 0 10px;
+                outline: none;
+              }
+            }
+          }
+          .button-divisor {
+            width: 20%;
+            position: relative;
+            button {
+              position: absolute;
+              bottom: 0;
+              right: 0;
+              left: auto;
+              top: auto;
+              padding: 10px;
+              width: 100%;
+              outline: none;
+              font-family: $fontThree;
+              background-color: white;
+              border: 2px solid rgba(254, 254, 254, 1);
+              border-radius: 5px;
+            }
+          }
         }
       }
       @media only screen and (max-width: $breakpoint-lg) {
+        .message-content-box {
+          padding: 60px 30px;
+          width: 100%;
+        }
         .message-form-content-box {
-          margin: 30px 0;
-          padding: 15px;
-          width: 90%;
-          .form-content {
-            input {
-              font-family: $fontThree;
-              background-color: transparent;
-              border: 1px solid rgba(254, 254, 254, 1);
-              border-radius: 5px;
-              height: 15px;
+          padding: 30px;
+          width: 100%;
+          .divisor {
+            width: 100%;
+            .form-divisor {
               width: 100%;
             }
-            textarea {
-              font-family: $fontThree;
-              background-color: transparent;
-              border: 1px solid rgba(254, 254, 254, 1);
-              border-radius: 5px;
+            .button-divisor {
+              padding-top: 20px;
               width: 100%;
+              button {
+                position: relative;
+              }
             }
+          }
+        }
+      }
+    }
+    .contact-content-box {
+      padding: 10px 30px 70px 30px;
+      h2 {
+        text-align: center;
+        padding: 30px 0;
+      }
+      .contact-flex-container {
+        font-family: $fontTwo;
+        font-weight: 600;
+        p{
+          text-transform: uppercase;
+        }
+        ul {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          li{
+            display: flex;
+            align-items: center;
+            font-weight: 300;
+            padding: 10px 0;
+            img{
+              background-color: white;
+              border-radius: 30px;
+              padding: 5px;
+              margin: 0 5px;
+              height: 20px;
+              width: 20px;
+            }
+            a{
+              color: white;
+              text-decoration: none;
+            }
+            &:hover{
+              img{
+                background-color: $colorThree;
+                transition: .5s ease-in;
+              }
+              a{
+                font-family: $fontOne;
+                color: $colorThree;
+                transition: .5s ease-in;
+              }
+            }
+          }
+        }
+        .address-container {
+          width: 30%;
+        }
+        .phone-container {
+          width: 30%;
+        }
+        .email-container {
+          width: 30%;
+        }
+      }
+    }
+    @media only screen and (max-width: $breakpoint-lg) {
+      .contact-content-box {
+        padding: 0 30px 30px 30px;
+        .contact-flex-container {
+          text-align: left;
+          justify-content: center;
+          .address-container {
+            padding-top: 15px;
+            width: 100%;
+          }
+          .phone-container {
+            padding-top: 50px;
+            width: 100%;
+          }
+          .email-container {
+            padding-top: 50px;
+            width: 100%;
           }
         }
       }

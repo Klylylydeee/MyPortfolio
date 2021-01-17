@@ -25,7 +25,9 @@
   height: 100vh;
   width: 100vw;
   background-color: $colorFive;
-  .margin-container{
+  .home-container{
+    height: 100%;
+    margin: 0 30px 30px 30px;
     position: relative;
     .text-container{
       position: absolute;
@@ -36,6 +38,9 @@
       }
       .message-text{
         color: white;
+      }
+      h3{
+        color: white
       }
     }
   }

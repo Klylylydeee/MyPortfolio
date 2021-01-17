@@ -11,11 +11,11 @@ import '../../styles/class.scss';
 import './about.scss';
 
 
-const About = () =>{
+const About = () => {
 
   const { setPanelState } = useContext(PaneContext);
   console.log('About Loaded')
-  
+
   return (
 
     <Scrollbars universal thumbMinSize={100}>
@@ -30,7 +30,7 @@ const About = () =>{
                 </Fade>
               </Zoom>
             </div>
-            <button className="button-container" onClick={ () => { setPanelState({isArrowDown: false}) }}>
+            <button className="button-container" onClick={() => { setPanelState({ isArrowDown: false }) }}>
               <div className="exit"></div>
             </button>
           </div>
@@ -42,10 +42,10 @@ const About = () =>{
             </Fade>
             <div className="text-content-box flex">
               <Fade left delay={500}>
-                <h3>Hi, I am <span className="special-text">Klyde Guevarra</span>. An aspiring <span className="special-text">Web Developer</span> and 
+                <h3>Hi, I am <span className="special-text">Klyde Guevarra</span>. An aspiring <span className="special-text">Web Developer</span> and
                   <span className="special-text"> UI/UX Designer</span> based in Silang, Cavite.
-                  Currently, I am still a student studying under the program of Bachelor of Science in Information 
-                  Technology at the Adventist University of the Philippines. I love learning and building things that make a difference for you and me. 
+                  Currently, I am still a student studying under the program of Bachelor of Science in Information
+                  Technology at the Adventist University of the Philippines. I love learning and building things that make a difference for you and me.
                   {/* I am still learning some new frontend Javascript frameworks/library and backend technologies and as for my UI/UX skills, I am hoping to learn 
                   more about prototyping, interaction and visual design, and typography.  */}
                   <span className="special-text"> There’s so much to know and learn from the ever-growing world of technology. </span>But hey, nice to meet you!</h3>
@@ -53,74 +53,78 @@ const About = () =>{
             </div>
           </div>
           <div className="content-box flex-reverse last-element">
-            <Rotate top left delay={700}>
-              <div className="background-box ">
+            <div className="background-box ">
+              <Rotate top left >
                 <h2>Working Experience</h2>
-                <ul>
-                  {/* Work */}
-                  <li className="parent-li">
-                      <li className="special-text">Date Encoder</li>
-                      <li>Private Company</li>
-                      <li>2020 July - 2020 November</li>
-                      <li className="details-text">I am currently a student studying under the program of Bachelor of Science in Information 
-                      Technology in Adventist University of the Philippines. I am currently a student studying under 
-                      the program of Bachelor of Science in Information Technology in Adventist University of the 
+              </Rotate>
+              <Rotate top left >
+              <ul>
+                {/* Work */}
+                <li className="parent-li">
+                  <li className="special-text">Date Encoder</li>
+                  <li>Private Company</li>
+                  <li>2020 July - 2020 November</li>
+                  <li className="details-text">I am currently a student studying under the program of Bachelor of Science in Information
+                  Technology in Adventist University of the Philippines. I am currently a student studying under
+                  the program of Bachelor of Science in Information Technology in Adventist University of the
                       Philippines. </li>
-                  </li>
-                </ul>
-              </div>
-            </Rotate>
-            <Rotate top left delay={800}>
-              <div className="background-box">
+                </li>
+              </ul>
+              </Rotate>
+            </div>
+            <div className="background-box">
+              <Rotate top left cascade>
                 <h2>Educational Background</h2>
+              </Rotate>
+              <Rotate top left cascade>
                 <ul>
                   {/* College */}
                   <li className="parent-li">
-                      <li className="special-text">Bachelor of Science Major in Information Technology</li>
-                      <li>Adventist University of the Philippines</li>
-                      <li>2018 - Current</li>
-                      <li className="details-text">I am currently a student studying under the program of Bachelor of Science in Information 
-                      Technology in Adventist University of the Philippines. I am currently a student studying under 
-                      the program of Bachelor of Science in Information Technology in Adventist University of the 
-                      Philippines. </li>
+                    <li className="special-text">Bachelor of Science Major in Information Technology</li>
+                    <li>Adventist University of the Philippines</li>
+                    <li>2018 - Current</li>
+                    <li className="details-text">I am currently a student studying under the program of Bachelor of Science in Information
+                    Technology in Adventist University of the Philippines. I am currently a student studying under
+                    the program of Bachelor of Science in Information Technology in Adventist University of the
+                        Philippines. </li>
                   </li>
                   {/* Senior High School */}
                   <li className="parent-li">
-                      <li className="special-text">Senior High School</li>
-                      <li>Adventist University of the Philippines</li>
-                      <li>2016 - 2018</li>
-                      <li className="details-text">I am currently a student studying under the program of Bachelor of Science in Information 
-                      Technology in Adventist University of the Philippines. I am currently a student studying under 
-                      the program of Bachelor of Science in Information Technology in Adventist University of the 
-                      Philippines. </li>
+                    <li className="special-text">Senior High School</li>
+                    <li>Adventist University of the Philippines</li>
+                    <li>2016 - 2018</li>
+                    <li className="details-text">I am currently a student studying under the program of Bachelor of Science in Information
+                    Technology in Adventist University of the Philippines. I am currently a student studying under
+                    the program of Bachelor of Science in Information Technology in Adventist University of the
+                        Philippines. </li>
                   </li>
                   {/* Junior High School */}
                   <li className="parent-li">
-                      <li className="special-text">Junior High School</li>
-                      <li>Adventist University of the Philippines</li>
-                      <li>2012 - 2016</li>
-                      <li className="details-text">I am currently a student studying under the program of Bachelor of Science in Information 
-                      Technology in Adventist University of the Philippines. I am currently a student studying under 
-                      the program of Bachelor of Science in Information Technology in Adventist University of the 
-                      Philippines. </li>
+                    <li className="special-text">Junior High School</li>
+                    <li>Adventist University of the Philippines</li>
+                    <li>2012 - 2016</li>
+                    <li className="details-text">I am currently a student studying under the program of Bachelor of Science in Information
+                    Technology in Adventist University of the Philippines. I am currently a student studying under
+                    the program of Bachelor of Science in Information Technology in Adventist University of the
+                        Philippines. </li>
                   </li>
                   {/* Elementary */}
                   <li className="parent-li">
-                      <li className="special-text">Elementary</li>
-                      <li>Adventist University of the Philippines</li>
-                      <li>2006 - 2012</li>
-                      <li className="details-text">I am currently a student studying under the program of Bachelor of Science in Information 
-                      Technology in Adventist University of the Philippines. I am currently a student studying under 
-                      the program of Bachelor of Science in Information Technology in Adventist University of the 
-                      Philippines. </li>
+                    <li className="special-text">Elementary</li>
+                    <li>Adventist University of the Philippines</li>
+                    <li>2006 - 2012</li>
+                    <li className="details-text">I am currently a student studying under the program of Bachelor of Science in Information
+                    Technology in Adventist University of the Philippines. I am currently a student studying under
+                    the program of Bachelor of Science in Information Technology in Adventist University of the
+                        Philippines. </li>
                   </li>
                 </ul>
-              </div>
-            </Rotate>
+              </Rotate>
+            </div>
           </div>
-          <div className="content-box">
-            <button onClick={ () => { setPanelState({isArrowUp: false}) }}>EXIT</button>
-          </div>
+          {/* <div className="content-box">
+            <button onClick={() => { setPanelState({ isArrowUp: false }) }}>EXIT</button>
+          </div> */}
         </div>
       </div>
     </Scrollbars>
