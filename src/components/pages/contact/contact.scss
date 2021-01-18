@@ -34,6 +34,11 @@
           padding: 30px 30px 0 30px;
         }
       }
+      @media only screen and (max-width: $breakpoint-md) {
+        &:nth-child(1){
+          padding: 20px 20px 0 20px;
+        }
+      }
       .content {
         h1 {
           position: relative;
@@ -141,11 +146,16 @@
         .text-divisor {
           textarea {
             outline: none;
+            color: white;
             font-family: $fontThree;
             background-color: transparent;
             border: 2px solid rgba(254, 254, 254, 1);
             border-radius: 5px;
             width: 100%;
+            &::placeholder { 
+              color: white;
+              opacity: 1;
+            }
           }
         }
         .divisor {
@@ -164,6 +174,11 @@
                 width: 100%;
                 padding: 0 10px;
                 outline: none;
+                color: white;
+                &::placeholder { 
+                  color: white;
+                  opacity: 1;
+                }
               }
             }
           }
@@ -212,15 +227,15 @@
       }
     }
     .contact-content-box {
-      padding: 10px 30px 70px 30px;
+      padding: 0 30px 70px 30px;
       h2 {
-        text-align: center;
-        padding: 30px 0;
+        padding: 50px 0 30px 0;
+        text-align: left;
       }
       .contact-flex-container {
         font-family: $fontTwo;
         font-weight: 600;
-        text-align: center;
+        text-align: left;
         p{
           text-transform: uppercase;
         }
@@ -228,15 +243,16 @@
           margin: 0;
           padding: 0;
           list-style: none;
+          padding: 10px 0;
           li{
             display: flex;
-            justify-content: center;
+            justify-content: left;
             align-items: center;
             font-weight: 300;
             padding: 10px 0;
             img{
               background-color: white;
-              border-radius: 30px;
+              border-radius: 10px;
               padding: 5px;
               margin: 0 5px;
               height: 20px;
@@ -249,19 +265,23 @@
           }
         }
         .address-container {
-          width: 30%;
+          width: 25%;
         }
         .phone-container {
-          width: 30%;
+          width: 25%;
         }
         .email-container {
-          width: 30%;
+          width: 25%;
         }
       }
     }
     @media only screen and (max-width: $breakpoint-lg) {
       .contact-content-box {
         padding: 0 30px 30px 30px;
+        h2 {
+          padding: 15px 0 30px 0;
+          text-align: left;
+        }
         .contact-flex-container {
           text-align: left;
           justify-content: center;
@@ -278,13 +298,55 @@
           .address-container {
             padding-top: 15px;
             width: 100%;
+            &:nth-child(2){
+            padding-top: 30px;
+            }
           }
           .phone-container {
-            padding-top: 50px;
+            padding-top: 30px;
             width: 100%;
           }
           .email-container {
-            padding-top: 50px;
+            padding-top: 30px;
+            width: 100%;
+          }
+        }
+      }
+    }
+    // heyhey
+    @media only screen and (max-width: $breakpoint-md) {
+      .contact-content-box {
+        padding: 0 20px 20px 20px;
+        h2 {
+          padding: 0;
+          text-align: left;
+        }
+        .contact-flex-container {
+          text-align: left;
+          justify-content: center;
+          ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            li{
+              display: flex;
+              justify-content: left;
+              align-items: left;
+            }
+          }
+          .address-container {
+            padding-top: 15px;
+            width: 100%;
+            &:nth-child(2){
+            padding-top: 30px;
+            }
+          }
+          .phone-container {
+            padding-top: 30px;
+            width: 100%;
+          }
+          .email-container {
+            padding-top: 30px;
             width: 100%;
           }
         }

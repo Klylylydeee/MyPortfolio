@@ -32,9 +32,9 @@ const Contact = () => {
           <div className="content-box flex first-element">
             <div className="content ">
               <Zoom>
-                <h1>About Me</h1>
+                <h1>Contacts</h1>
                 <Fade top cascade>
-                  <span>About Me</span>
+                  <span>Contacts</span>
                 </Fade>
               </Zoom>
             </div>
@@ -42,9 +42,9 @@ const Contact = () => {
               <div className="exit"></div>
             </button>
           </div>
-          <div className="contact-content-box">
+          <div className="contact-content-box no-select">
             <Zoom>
-              <h2><span className="special-text">Get in touch</span> with me through the following:</h2>
+              <h2><span className="special-text ">Get in touch</span> with me through the following:</h2>
             </Zoom>
             <div className="contact-flex-container flex-reverse">
               <div className="address-container">
@@ -63,6 +63,13 @@ const Contact = () => {
                         Klyde Guevarra
                       </a>
                     </li>
+                  </ul>
+                </Zoom>
+              </div>
+              <div className="address-container">
+                <Zoom cascade> 
+                  <p>Social Medias</p>
+                  <ul>
                     <li >
                       <img src={github} alt="" />
                       <a href="mailto:kguevarra13@icloud.com?subject = Feedback&body = Message">
@@ -131,7 +138,7 @@ const Contact = () => {
             </div>
           </div>
           <div className="content-box flex-reverse">
-            <div className="message-content-box">
+            <div className="message-content-box no-select">
               <Fade left delay={500}>
                 <h3>If you have any questions, please feel free to communicate with me by dropping a line or so. If you don't get an answer
                 immediately, I might be busy at school or doing some personal projects. I'll get back to you as

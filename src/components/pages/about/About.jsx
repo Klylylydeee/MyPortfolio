@@ -40,7 +40,7 @@ const About = () => {
                 <img src="https://i.ibb.co/gDdxz5c/IMG-20191130-102239-800.jpg" alt="IMG-20191130-102239-800" border="0" />
               </div>
             </Fade>
-            <div className="text-content-box flex">
+            <div className="text-content-box flex no-select">
               <Fade left delay={500}>
                 <h3>Hi, I am <span className="special-text">Klyde Guevarra</span>. An aspiring <span className="special-text">Web Developer</span> and
                   <span className="special-text"> UI/UX Designer</span> based in Silang, Cavite.
@@ -52,7 +52,17 @@ const About = () => {
               </Fade>
             </div>
           </div>
-          <div className="content-box flex-reverse last-element">
+          <div className="content-box no-select">
+            <Fade bottom cascade delay={500}>
+            <h3>
+            If you have a dream, chase it no matter what it takes.
+            </h3>
+            <h4 className="special-text">
+            James Harden
+            </h4>
+            </Fade>
+          </div>
+          <div className="content-box flex-reverse last-element no-select">
             <div className="background-box ">
               <Rotate top left >
                 <h2>Working Experience</h2>
