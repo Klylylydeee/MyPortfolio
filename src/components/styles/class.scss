@@ -8,7 +8,9 @@
     // Remember to reverse flex direction for mobile responsive
     display: flex;
 }
-
+.no-select{
+    user-select: none;
+}
 .first-element {
     padding-top: 30px;
 }
@@ -43,6 +45,8 @@ h4 {
 }
 
 h5 {
+    font-weight: 600;
+    font-family: $fontOne;
 }
 
 h6 {

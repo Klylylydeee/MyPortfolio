@@ -30,7 +30,7 @@ const About = () => {
                 </Fade>
               </Zoom>
             </div>
-            <button className="button-container" onClick={() => { setPanelState({ isArrowDown: false }) }}>
+            <button className="button-container" onClick={() => { setPanelState({ isArrowUp: false }) }}>
               <div className="exit"></div>
             </button>
           </div>

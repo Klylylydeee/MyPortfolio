@@ -38,8 +38,18 @@
       .message-text{
         color: white;
       }
-      h3{
-        color: white
+      h5{
+        text-transform: uppercase;
+        color: white;
+        .btnless{
+          background: none;
+          color: inherit;
+          border: none;
+          padding: 0 20px;
+          font: inherit;
+          cursor: pointer;
+          outline: inherit;
+        }
       }
     }
   }

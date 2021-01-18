@@ -6,10 +6,13 @@
   background-color: #252422;
   .margin-container {
     .content-box {
+      padding: 0 30px 30px 30px;
       justify-content: space-between;
+      &:nth-child(1) {
+        padding: 30px 30px 0 30px;
+      }
       .content {
         h1 {
-          position: absolute;
           position: relative;
           padding-bottom: 5px;
           text-transform: uppercase;
@@ -54,6 +57,56 @@
           white-space: nowrap;
         }
       }
+      .button-container {
+        height: 50px;
+        width: 70px;
+        margin-top: 10px;
+        background: none;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .exit {
+          position: relative;
+          background-color: $colorThree;
+          border-radius: 360px;
+          height: 15px;
+          width: 15px;
+          &::after {
+            content: "";
+            position: absolute;
+            background-color: $colorThree;
+            border-radius: 360px;
+            height: 15px;
+            width: 15px;
+            transform: translateX(-165%);
+          }
+          &::before {
+            content: "";
+            position: absolute;
+            background-color: $colorThree;
+            border-radius: 360px;
+            height: 15px;
+            width: 15px;
+            transform: translateX(65%);
+          }
+          &:hover {
+            animation: mainMoves 1s infinite;
+            @keyframes mainMoves {
+              33% {
+                transform: translateY(-30%);
+              }
+              66% {
+                transform: translateY(30%);
+              }
+              99% {
+                transform: translateY(-30%);
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
+
