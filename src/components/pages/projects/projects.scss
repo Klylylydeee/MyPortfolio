@@ -6,10 +6,13 @@
   background-color: #252422;
   .margin-container {
     .content-box {
+      padding: 0 30px 30px 30px;
       justify-content: space-between;
+      &:nth-child(1) {
+        padding: 30px 30px 0 30px;
+      }
       .content {
         h1 {
-          position: absolute;
           position: relative;
           padding-bottom: 5px;
           text-transform: uppercase;
@@ -53,6 +56,150 @@
           user-select: none;
           white-space: nowrap;
         }
+      }
+      .button-container {
+        height: 50px;
+        width: 70px;
+        margin-top: 10px;
+        background: none;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .exit {
+          position: relative;
+          background-color: $colorThree;
+          border-radius: 360px;
+          height: 15px;
+          width: 15px;
+          &::after {
+            content: "";
+            position: absolute;
+            background-color: $colorThree;
+            border-radius: 360px;
+            height: 15px;
+            width: 15px;
+            transform: translateX(-165%);
+          }
+          &::before {
+            content: "";
+            position: absolute;
+            background-color: $colorThree;
+            border-radius: 360px;
+            height: 15px;
+            width: 15px;
+            transform: translateX(65%);
+          }
+          &:hover {
+            animation: mainMoves 1s infinite;
+            @keyframes mainMoves {
+              33% {
+                transform: translateY(-30%);
+              }
+              66% {
+                transform: translateY(30%);
+              }
+              99% {
+                transform: translateY(-30%);
+              }
+            }
+          }
+        }
+      }
+    }
+    .container {
+      max-width: 100%;
+      margin: auto;
+      padding: 20px 0 40px 0;
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        .team-items {
+          flex-basis: 100%;
+          max-width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-around;
+          .item {
+            animation: drop 2s ease;
+            flex-basis: calc(35% - 30px);
+            max-width: calc(80% - 1px);
+            transition: all 0.5s ease;
+            margin-bottom: 40px;
+            .flex {
+              justify-content: center;
+              img {
+                height: 270px;
+                width: auto;
+                border-radius: 8px;
+                @media only screen and (max-width: $breakpoint-md) {
+                  height: 230px;
+                }
+                @media only screen and (max-width: $breakpoint-md) {
+                  height: 250px;
+                }
+              }
+            }
+            .inner {
+              position: relative;
+              z-index: 11;
+              padding: 0 40px;
+              @media only screen and (max-width: $breakpoint-md) {
+                padding: 0;
+              }
+              @media only screen and (max-width: $breakpoint-lg) {
+                padding: 0 15px;
+              }
+              .info {
+                background-color: $colorThree;
+                text-align: center;
+                padding: 20px 15px;
+                border-radius: 8px;
+                transition: all 0.5s ease;
+                margin-top: -30px;
+                h3{
+                  font-weight: 900;
+                }
+                h4{
+                  font-weight: 600;
+                  padding: 0 0 10px 0;
+                }
+                h5{
+                  font-weight: 300;
+                  padding: 0 3%;
+                  display: flex;
+                  justify-content: space-between;
+                  img{
+                    padding: 20px 0 0 0;
+                    height: 50px;
+                    width: auto;
+                  }
+                }
+                .special-h5{
+                  display: flex;
+                  justify-content: center;
+                }
+              }
+            }
+            &:hover {
+              transform: translateY(-10px);
+              .info {
+                transform: translateY(-20px);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @keyframes drop {
+      0% {
+        opacity: 0;
+        transform: translateY();
+      }
+      100% {
+        opacity: 1;
+        transform: translateY();
       }
     }
   }
