@@ -13,60 +13,27 @@ import './components/styles/class.scss';
 import './myPortfolio.scss'
 
 const MyPortfolio = () => {
+  // State Hooks
   const [panelState, setPanelState] = useState({
     isArrowUp: false,
     isArrowDown: false,
     ArrowLeft: false,
     ArrowRight: false,
-  }); 
-  // Keydown checker callback
+  });
+  // Keydown checker, memoize (basically next time its loaded it is much faster)
   const handleKeyPress = useCallback((event) => {
-    switch (event.key) {
-      case 'ArrowUp':
-        setPanelState({ isArrowUp: true })
-        break
-      case 'w':
-        setPanelState({ isArrowUp: true })
-        break
-      case 'W':
-        setPanelState({ isArrowUp: true })
-        break
-      case 'ArrowDown':
-        setPanelState({ isArrowDown: true })
-        break
-      case 's':
-        setPanelState({ isArrowDown: true })
-        break
-      case 'S':
-        setPanelState({ isArrowDown: true })
-        break
-      case 'ArrowRight':
-        setPanelState({ isArrowRight: true })
-        break
-      case 'd':
-        setPanelState({ isArrowRight: true })
-        break
-      case 'D':
-        setPanelState({ isArrowRight: true })
-        break
-      case 'ArrowLeft':
-        setPanelState({ isArrowLeft: true })
-        break
-      case 'a':
-        setPanelState({ isArrowLeft: true })
-        break
-      case 'A':
-        setPanelState({ isArrowLeft: true })
-        break
-      case 'Escape':
-        setPanelState({ isArrowUp: false, isArrowDown: false, isArrowLeft: false, isArrowRight: false, })
-        break
-      default:
-        // setPanelState({ isArrowUp: false, isArrowDown: false, ArrowLeft: false, ArrowRight: false, })
-        break
+    console.log(event.key)
+    if (event.key === "ArrowDown" || event.key === "s" || event.key === "S") {
+      setPanelState({ isArrowDown: true })
+    } else if (event.key === "ArrowUp" || event.key === "w" || event.key === "W") {
+      setPanelState({ isArrowUp: true })
+    } else if (event.key === "ArrowLeft" || event.key === "a" || event.key === "A") {
+      setPanelState({ isArrowLeft: true })
+    } else if (event.key === "ArrowRight" || event.key === "d" || event.key === "D") {
+      setPanelState({ isArrowRight: true })
     }
   }, [setPanelState])
-  // Use callback to avoid infinite loop
+  // To avoid re-render of previous states that causes infinite loops
   useEffect(() => {
     if (panelState) {
       window.addEventListener("keydown", handleKeyPress)
@@ -80,52 +47,56 @@ const MyPortfolio = () => {
 
   return (
 
-    <div className="main-container">
-      {/* <div className="home-container">
-        <div className="text-container last-element">
-          <h1 className="name-text">Hi, I am <span className="special-text">Klyde Guevarra</span></h1>
-          <h2 className="message-text">An aspiring <span className="special-text">Web Developer</span> and <span className="special-text">UI/UX Designer</span> based in Silang, Cavite.</h2>
-          <h5>Press the button 
-            <span className="special-text">
-              <button className="btnless" onClick={() => { setPanelState({ isArrowUp: true }) }}> About Me </button>
-              <button className="btnless" onClick={() => { setPanelState({ isArrowDown: true }) }}> Contacts </button>
-              <button className="btnless" onClick={() => { setPanelState({ isArrowLeft: true }) }}> Skills </button>
-              <button className="btnless" onClick={() => { setPanelState({ isArrowRight: true }) }}> Projects </button>
-            </span>
-          </h5>
+
+    <main>
+      {/* 1 */}
+      <nav>
+        <div className="nav-content">
+          <p><a href="/#" onClick={() => { setPanelState({ isArrowUp: true }) }}>About Me</a></p>
+          <p><a href="/#" onClick={() => { setPanelState({ isArrowLeft: true }) }}>Skills</a></p>
+          <p><a href="/#" onClick={() => { setPanelState({ isArrowRight: true }) }}>Project</a></p>
+          <p><a href="/#" onClick={() => { setPanelState({ isArrowDown: true }) }}>Contact</a></p>
+          <button className="nav-content-btn"></button>
         </div>
-      </div> */}
-
+        <div className="nav-logo">
+          <p className="nav-logo-name">Klyde Guevarra</p>
+          <p>Web Developer & UI/UX Designer</p>
+        </div>
+      </nav>
+      {/* 2 */}
+      <section className="hero-container">
+        You could also navigate by pressing ASWD or Arrow Keys
+      </section>
+      {/* 3 */}
       {/* Sliding Panes */}
-
       <SlidingPanel type={'top'} isOpen={panelState.isArrowUp} backdropClicked={() => setPanelState({ isArrowUp: false })} size={100}
         panelClassName="" panelContainerClassName="" noBackdrop={true} >
         <PaneContext.Provider value={{ panelState, setPanelState }}>
-        <About/>
+          <About />
         </PaneContext.Provider>
       </SlidingPanel>
 
       <SlidingPanel type={'bottom'} isOpen={panelState.isArrowDown} backdropClicked={() => setPanelState({ isArrowDown: false })} size={100}
         panelClassName="" panelContainerClassName="" noBackdrop={true} >
         <PaneContext.Provider value={{ panelState, setPanelState }}>
-        <Contact/>
+          <Contact />
         </PaneContext.Provider>
       </SlidingPanel>
 
       <SlidingPanel type={'right'} isOpen={panelState.isArrowRight} backdropClicked={() => setPanelState({ isArrowRight: false })} size={100}
         panelClassName="" panelContainerClassName="" noBackdrop={true} >
         <PaneContext.Provider value={{ panelState, setPanelState }}>
-        <Projects/>
+          <Projects />
         </PaneContext.Provider>
       </SlidingPanel>
 
       <SlidingPanel type={'left'} isOpen={panelState.isArrowLeft} backdropClicked={() => setPanelState({ isArrowLeft: false })} size={100}
         panelClassName="" panelContainerClassName="" noBackdrop={true} >
         <PaneContext.Provider value={{ panelState, setPanelState }}>
-        <Skills/>
+          <Skills />
         </PaneContext.Provider>
       </SlidingPanel>
-    </div>
+    </main>
   );
 };
 

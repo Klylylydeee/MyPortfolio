@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MyPortfolio from './MyPortfolio';
+import MyPortfolio from './MyPortfolio.jsx';
 
 ReactDOM.render(
   <React.StrictMode>

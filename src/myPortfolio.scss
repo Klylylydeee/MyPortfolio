@@ -3,6 +3,7 @@
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 .panel-content {
   height: 100%;
@@ -20,37 +21,124 @@
   flex-direction: column;
 }
 
-.main-container{
-  height: 100vh;
-  width: 100vw;
-  background-color: $colorFive;
-  .home-container{
-    height: 100%;
-    margin: 0 30px 30px 30px;
-    position: relative;
-    .text-container{
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      .name-text{
-        color: white;
+main{
+  min-height: 100vh;
+  width: 100%;
+  // 1
+  nav{
+      padding: 1rem 5rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-content: center;
+      align-items: center;
+      overflow: hidden;
+      text-transform: uppercase;
+      font-family: $fontOne;
+      background-color: #f4f3f3;
+      color:#222831;
+      @media only screen and (max-width: $breakpoint-lg) {
+          padding: 1rem; 
       }
-      .message-text{
-        color: white;
+      @media only screen and (max-width: $breakpoint-xs) {
+          padding: 1rem .5rem; 
       }
-      h5{
-        text-transform: uppercase;
-        color: white;
-        .btnless{
-          background: none;
-          color: inherit;
-          border: none;
-          padding: 0 20px;
-          font: inherit;
-          cursor: pointer;
-          outline: inherit;
-        }
+      .nav-logo{
+          font-size: .75rem;
+          order: 2;
+          user-select: none;
+          position: relative;
+          &-name{
+              font-size: 1.25rem;
+              letter-spacing: .185rem;
+              font-weight: 600;
+          }
+          @media only screen and (max-width: $breakpoint-lg) {
+              order: 1;
+          }
       }
-    }
+      .nav-content{
+          order: 1;
+          display: flex;
+          @media only screen and (max-width: $breakpoint-lg) {
+              order: 2;
+          }
+          *{
+              padding: 0 1rem;
+              font-size: 1rem;
+              font-weight: 600;
+          }
+          p{
+              a{
+                  margin: 0;
+                  padding: 0;
+                  text-decoration: none;
+                  color:#222831;
+              }
+              span{
+                  margin: 0;
+                  padding: 0;
+                  color: $colorTwo;
+              }
+              // If smaller than
+              @media only screen and (max-width: $breakpoint-md) {
+                  display: none;
+              }
+          }
+          &-btn{
+              // If larger than
+              @media only screen and (min-width: $breakpoint-md) {
+                  display: none;
+              }
+              cursor: pointer;
+              border: none;
+              outline: none;
+              margin: 0;
+              padding: 0;
+              height: .25rem;
+              width: 3rem;
+              background-color: black;
+              position: relative;
+              &::after{
+                  content: "";
+                  position: absolute;
+                  left: 0;
+                  height: .25rem;
+                  width: 2.5rem;
+                  background-color: black;
+                  transform: translateY(100%);
+              }
+              &::before{
+                  content: "";
+                  position: absolute;
+                  right: 0;
+                  height: .25rem;
+                  width: 2.5rem;
+                  background-color: black;
+                  transform: translateY(-200%);
+              }
+          }
+      }
+  }
+  // 2
+  .hero-container{
+      // 4.41rem is the total size of the nav, thus this results to almost 90vh of the window at load.
+      min-height: calc(100vh - 4.41rem);
+      width: 100%;
+      background-color: rgba(79, 241, 74, 0.514);
+      padding: 1rem 5rem;
+      background-image: url("https://i.ibb.co/PTJ1B99/666324.jpg");
+      background-size: cover;
+      background-attachment: fixed;
+      background-color: rgba(0, 0, 0, 0.7);
+      background-blend-mode: multiply;
+      background-position-y: 100%;
+      background-position-x: 100%;
+      @media only screen and (max-width: $breakpoint-lg) {
+          padding: 1rem; 
+      }
+      @media only screen and (max-width: $breakpoint-xs) {
+          padding: 1rem .5rem; 
+      }
   }
 }
