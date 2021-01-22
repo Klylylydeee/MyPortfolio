@@ -1,144 +1,502 @@
 @import "./components/styles//variables.scss";
 
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 .panel-content {
-  height: 100%;
-  width: 100%;
-  pointer-events: all;
+    height: 100%;
+    width: 100%;
+    pointer-events: all;
 }
 
 .panel-container {
-  height: 100%;
-  width: 100%;
-  background-color: green;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background-color: green;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
-main{
-  min-height: 100vh;
-  width: 100%;
-  // 1
-  nav{
-      padding: 1rem 5rem;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-content: center;
-      align-items: center;
-      overflow: hidden;
-      text-transform: uppercase;
-      font-family: $fontOne;
-      background-color: #f4f3f3;
-      color:#222831;
-      @media only screen and (max-width: $breakpoint-lg) {
-          padding: 1rem; 
-      }
-      @media only screen and (max-width: $breakpoint-xs) {
-          padding: 1rem .5rem; 
-      }
-      .nav-logo{
-          font-size: .75rem;
-          order: 2;
-          user-select: none;
-          position: relative;
-          &-name{
-              font-size: 1.25rem;
-              letter-spacing: .185rem;
-              font-weight: 600;
-          }
-          @media only screen and (max-width: $breakpoint-lg) {
-              order: 1;
-          }
-      }
-      .nav-content{
-          order: 1;
-          display: flex;
-          @media only screen and (max-width: $breakpoint-lg) {
-              order: 2;
-          }
-          *{
-              padding: 0 1rem;
-              font-size: 1rem;
-              font-weight: 600;
-          }
-          p{
-              a{
-                  margin: 0;
-                  padding: 0;
-                  text-decoration: none;
-                  color:#222831;
-              }
-              span{
-                  margin: 0;
-                  padding: 0;
-                  color: $colorTwo;
-              }
-              // If smaller than
-              @media only screen and (max-width: $breakpoint-md) {
-                  display: none;
-              }
-          }
-          &-btn{
-              // If larger than
-              @media only screen and (min-width: $breakpoint-md) {
-                  display: none;
-              }
-              cursor: pointer;
-              border: none;
-              outline: none;
-              margin: 0;
-              padding: 0;
-              height: .25rem;
-              width: 3rem;
-              background-color: black;
-              position: relative;
-              &::after{
-                  content: "";
-                  position: absolute;
-                  left: 0;
-                  height: .25rem;
-                  width: 2.5rem;
-                  background-color: black;
-                  transform: translateY(100%);
-              }
-              &::before{
-                  content: "";
-                  position: absolute;
-                  right: 0;
-                  height: .25rem;
-                  width: 2.5rem;
-                  background-color: black;
-                  transform: translateY(-200%);
-              }
-          }
-      }
-  }
-  // 2
-  .hero-container{
-      // 4.41rem is the total size of the nav, thus this results to almost 90vh of the window at load.
-      min-height: calc(100vh - 4.41rem);
-      width: 100%;
-      background-color: rgba(79, 241, 74, 0.514);
-      padding: 1rem 5rem;
-      background-image: url("https://i.ibb.co/PTJ1B99/666324.jpg");
-      background-size: cover;
-      background-attachment: fixed;
-      background-color: rgba(0, 0, 0, 0.7);
-      background-blend-mode: multiply;
-      background-position-y: 100%;
-      background-position-x: 100%;
-      @media only screen and (max-width: $breakpoint-lg) {
-          padding: 1rem; 
-      }
-      @media only screen and (max-width: $breakpoint-xs) {
-          padding: 1rem .5rem; 
-      }
-  }
+main {
+    min-height: 100vh;
+    width: 100%;
+    // 1
+    nav {
+        padding: 1rem 5rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-content: center;
+        align-items: center;
+        overflow: hidden;
+        text-transform: uppercase;
+        font-family: $fontOne;
+        background-color: #f4f3f3;
+        color: #222831;
+        @media only screen and (max-width: $breakpoint-lg) {
+            padding: 1rem;
+        }
+        @media only screen and (max-width: $breakpoint-xs) {
+            padding: 1rem 0.5rem;
+        }
+        .nav-logo {
+            font-size: 0.75rem;
+            order: 2;
+            user-select: none;
+            position: relative;
+            &-name {
+                font-size: 1.25rem;
+                letter-spacing: 0.185rem;
+                font-weight: 600;
+            }
+            @media only screen and (max-width: $breakpoint-lg) {
+                order: 1;
+            }
+        }
+        .nav-content {
+            order: 1;
+            display: flex;
+            @media only screen and (max-width: $breakpoint-lg) {
+                order: 2;
+            }
+            .tool-tip{
+                font-family: $fontThree;
+                padding: 0 .4rem;
+                font-size: .75rem;
+                font-weight: 100;
+                text-transform: none !important;
+                margin: .4rem 0rem;
+            }
+            * {
+                padding: 0 1rem;
+                font-size: 1rem;
+                font-weight: 600;
+            }
+            p {
+                a {
+                    margin: 0;
+                    padding: 0;
+                    text-decoration: none;
+                    color: #222831;
+                }
+                span {
+                    margin: 0;
+                    padding: 0;
+                    color: $colorTwo;
+                }
+                // If smaller than
+                @media only screen and (max-width: $breakpoint-md) {
+                    display: none;
+                }
+            }
+            &-btn {
+                // If larger than
+                @media only screen and (min-width: $breakpoint-md) {
+                    display: none;
+                }
+                cursor: pointer;
+                border: none;
+                outline: none;
+                margin: 0;
+                padding: 0;
+                height: 0.25rem;
+                width: 3rem;
+                background-color: #222831;
+                position: relative;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    height: 0.25rem;
+                    width: 2.5rem;
+                    background-color: #222831;
+                    transform: translateY(100%);
+                }
+                &::before {
+                    content: "";
+                    position: absolute;
+                    right: 0;
+                    height: 0.25rem;
+                    width: 2.5rem;
+                    background-color: #222831;
+                    transform: translateY(-200%);
+                }
+            }
+        }
+    }
+    // 2
+    .hero-container {
+        // 4.41rem is the total size of the nav, thus this results to almost 90vh of the window at load.
+        min-height: calc(100vh - 4.41rem);
+        width: 100%;
+        padding: 1rem 5rem;
+        background-size: cover;
+        background-attachment: fixed;
+        background-color: rgba(0, 0, 0, 0.5);
+        background-blend-mode: multiply;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        @media only screen and (max-width: $breakpoint-lg) {
+            padding: 1rem;
+        }
+        @media only screen and (max-width: $breakpoint-xs) {
+            padding: 1rem 0.5rem;
+        }
+        &-text {
+            .main-hero-text{
+                font-family: $fontOne;
+                font-weight: 900;
+                font-size: 3rem;
+                color: #f4f3f3;
+            }
+            .ter-hero-text{
+                display: none;
+                font-family: $fontThree;
+                font-weight: 100;
+                font-size: 1.2rem;
+                color: #f4f3f3;
+            }
+            .sub-hero-text{
+                font-family: $fontOne;
+                font-weight: 900;
+                font-size: 2rem;
+                color: #f4f3f3;
+                padding: 0 0 1rem 0;
+            }
+            @media only screen and (max-width: $breakpoint-lg) {
+                .sub-hero-text{
+                    padding: 0 0 2rem 0;
+                }
+            }
+            @media only screen and (max-width: $breakpoint-sm) {
+                .main-hero-text{
+                    padding: .5rem 0;
+                }
+                .ter-hero-text{
+                    display: unset !important;
+                }
+                .sub-hero-text{
+                    display: none;
+                }
+            }
+            .hero-text-content{
+                display: flex;
+                // @media only screen and (max-width: $breakpoint-md) {
+                //     right: -225%;
+                // }
+                // @media only screen and (max-width: $breakpoint-xs) {
+                //     top: -100%;
+                //     right: -333%;
+                // }
+                &-first{
+                    padding: 0 1rem 0 0;
+                }
+                p{
+                    text-align: justify;
+                    width: 50%;
+                    span{
+                        font-weight: 700;
+                        color: #f4f3f3;
+                        span{
+                            color: #ffc324;
+                        }
+                    }
+                    font-family: $fontThree;
+                    font-weight: 100;
+                    font-size: 1rem;
+                    color: #f4f3f3;
+                }
+                @media only screen and (max-width: $breakpoint-lg) {
+                    flex-direction: column;
+                    &-first{
+                        padding: 0 0 1rem 0;
+                    }
+                    p{
+                        width: 100%;
+                    }
+                }
+                @media only screen and (max-width: $breakpoint-sm) {
+                    flex-direction: column;
+                    &-first{
+                        display: none;
+                    }
+                    &-second{
+                        display: none;
+                    }
+                    p{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        #myVideo {
+            position: absolute;
+            right: 0;
+            top: -60%;
+            bottom: 0;
+            min-height: calc(100vh - 4.41rem);
+            min-width: auto;
+            z-index: -1;
+            @media only screen and (max-width: $breakpoint-lg) {
+                right: -50%;
+            }
+            @media only screen and (max-width: $breakpoint-md) {
+                right: -225%;
+            }
+            @media only screen and (max-width: $breakpoint-xs) {
+                top: -100%;
+                right: -333%;
+            }
+        }
+    }
+    // Hidden for desktop view
+    .mobile-view-container {
+        min-height: 100vh;
+        width: 100%;
+        background-color: rgba(145, 20, 20, 0.678);
+        //   For Desktop view remove full view
+        //   @media only screen and (min-width: $breakpoint-lg) {
+        //       display: none;
+        //   }
+        .about-container {
+            min-height: 100vh;
+            width: 100%;
+            background-color: #f4f3f3;
+            padding: 0 5rem;
+            user-select: none;
+            @media only screen and (max-width: $breakpoint-lg) {
+                padding: 0rem 1rem;
+            }
+            @media only screen and (max-width: $breakpoint-xs) {
+                padding: 0rem 0.5rem;
+            }
+            &-header {
+                padding: 2.5rem 0rem 2rem 0;
+                @media only screen and (max-width: $breakpoint-lg) {
+                    padding: 2rem 0rem 1.5rem 0;
+                }
+                @media only screen and (max-width: $breakpoint-xs) {
+                    padding: 1rem 0rem 0.5rem 0;
+                }
+                &-text {
+                    h1 {
+                        position: relative;
+                        text-transform: uppercase;
+                        color: black;
+                        &:before {
+                            content: "";
+                            position: absolute;
+                            left: 0;
+                            top: auto;
+                            bottom: 0;
+                            height: 5px;
+                            width: 100px;
+                            background: rgb(255, 204, 0);
+                            border-radius: 100px;
+                            z-index: 2;
+                        }
+                        &:after {
+                            content: "";
+                            position: absolute;
+                            left: 0;
+                            top: auto;
+                            bottom: 0;
+                            height: 5px;
+                            width: 35px;
+                            background: rgb(255, 204, 0);
+                            border-radius: 100px;
+                            z-index: 2;
+                        }
+                    }
+                    span {
+                        left: 0;
+                        top: 0;
+                        font-size: 2.3rem;
+                        line-height: 1;
+                        font-weight: 900;
+                        color: rgba(34, 40, 49, 0.3);
+                        text-transform: uppercase;
+                        transform: translateY(-60%);
+                        z-index: -1;
+                        display: inline-block;
+                        user-select: none;
+                        white-space: nowrap;
+                    }
+                }
+            }
+            .introduction-content {
+                display: flex;
+                padding: 0 0rem 4rem 0;
+                @media only screen and (max-width: $breakpoint-lg) {
+                    padding: 0 0rem 1.5rem 0;
+                }
+                @media only screen and (max-width: $breakpoint-xs) {
+                    padding: 0rem 0rem 0.5rem 0;
+                }
+                @media only screen and (max-width: $breakpoint-lg) {
+                    flex-direction: column;
+                    align-items: center;
+                }
+                &-text {
+                    width: calc(100% - 20rem);
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    padding: 0 3rem;
+                    @media only screen and (max-width: $breakpoint-lg) {
+                        width: 100%;
+                        padding: 2rem 1rem 1rem 1rem;
+                    }
+                    @media only screen and (max-width: $breakpoint-xs) {
+                        padding: 1rem 0.5rem;
+                    }
+                    p {
+                        font-family: $fontOne;
+                        font-weight: 600;
+                        font-size: 1.2rem;
+                        color: #222831;
+                        &:nth-child(2) {
+                            padding: 0 0 0.8rem 0;
+                        }
+                        &:nth-child(3) {
+                            font-weight: 100;
+                            font-family: $fontFive;
+                            font-size: 0.9rem;
+                            text-align: justify;
+                            padding: 0 0 0.5rem 0;
+                        }
+                        &:nth-child(4) {
+                            font-weight: 100;
+                            font-family: $fontFive;
+                            font-size: 0.9rem;
+                            text-align: justify;
+                            padding: 0 0 0.5rem 0;
+                        }
+                        &:nth-child(5) {
+                            font-weight: 100;
+                            font-family: $fontFive;
+                            font-size: 0.9rem;
+                            text-align: justify;
+                        }
+                        @media only screen and (max-width: $breakpoint-lg) {
+                            &:nth-child(2) {
+                                padding: 0 0 1rem 0;
+                            }
+                        }
+                        span {
+                            color: #ffc324;
+                            font-weight: 900;
+                        }
+                    }
+                }
+                &-img {
+                    height: auto;
+                    width: 20rem;
+                    position: relative;
+                    // Sets the div
+                    display: inline-block;
+                    overflow: hidden;
+                    border-radius: 0 50px;
+                    img {
+                        height: 100%;
+                        width: 100%;
+                        // sets the image to the div size
+                        object-fit: cover;
+                        display: block;
+                        transition: 0.2s ease-in-out;
+                        &:hover {
+                            transform: scale(1.1);
+                        }
+                    }
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        height: 0.5rem;
+                        width: 60%;
+                        background-color: #36454f;
+                        z-index: 2;
+                        border-radius: 0 10px 300px 0;
+                    }
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        height: 0.5rem;
+                        right: 0;
+                        width: 60%;
+                        background-color: #36454f;
+                        transform: translateY(-100%);
+                        z-index: 2;
+                        border-radius: 300px 0 0 10px;
+                    }
+                }
+            }
+            .quote-content {
+                position: relative;
+                text-align: center;
+                @media only screen and (max-width: $breakpoint-lg) {
+                    padding: 0rem 0.7rem;
+                }
+                @media only screen and (max-width: $breakpoint-xs) {
+                    padding: 0rem 0.5rem;
+                }
+                &:before {
+                    content: "";
+                    position: absolute;
+                    height: 0.2rem;
+                    width: 15rem;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    margin-left: auto;
+                    margin-right: auto;
+                    text-align: center;
+                    background-color: #36454f;
+                    z-index: 99;
+                    border-radius: 300px;
+                }
+                &:after {
+                    content: "";
+                    position: absolute;
+                    height: 0.2rem;
+                    width: 15rem;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    margin-left: auto;
+                    margin-right: auto;
+                    text-align: center;
+                    background-color: #36454f;
+                    z-index: 99;
+                    border-radius: 300px;
+                }
+                &-text {
+                    padding: 0.5rem 1rem 0 1rem;
+                    font-family: $fontThree;
+                    font-size: 1.5rem;
+                    font-weight: 300;
+                    color: #222831;
+                    @media only screen and (max-width: $breakpoint-md) {
+                        padding: 0.5rem 2rem;
+                    }
+                    @media only screen and (max-width: $breakpoint-xs) {
+                        padding: 0.5rem 2rem;
+                    }
+                }
+                &-signature {
+                    padding: 1rem;
+                    font-family: $fontFour;
+                    font-weight: 600;
+                    font-size: 1.7rem;
+                    color: #222831;
+                }
+            }
+        }
+    }
 }
