@@ -15,12 +15,6 @@ import './components/styles/class.scss';
 import './myPortfolio.scss'
 import video from './assets/Sunrise Over The City - Timelapse 4K - Free 4K Stock Footage -.mkv';
 import video2 from './assets/My Switzerland(1).mp4';
-import adobe from './assets/photoshop.svg';
-import adobe2 from './assets/1051px-Adobe_XD_CC_icon.svg.png';
-import figma from './assets/220px-Figma-logo.svg.png';
-import backend from './assets/maintenance.png';
-import database from './assets/database.svg';
-import frontend from './assets/programming.svg';
 
 const MyPortfolio = () => {
   // State Hooks
@@ -211,27 +205,27 @@ const MyPortfolio = () => {
               <p className="services-header">Services</p>
               <div className="services-container-flex">
                 <div className="services-container-content">
-                  <img src="http://www.emilyridge.ie/wp-content/uploads/galway-website-development.png" alt="alt"/>
+                  <img src="https://i.ibb.co/WWwP21Y/website-development.png" alt="alt"/>
                   <p className="services-header">Web Development</p>
                   <p>Web Prototype Designs allows developers and users alike to get grasp of their desired visuals. 
                     Through this service, I offer a feature-filled design that will have a memorable effect to 
                     everyone.</p>
                   <div className="services-container-content-img">
-                    <img src={frontend} alt="alt" data-tip="FrontEnd" data-class="tool-tip" />
-                    <img src={backend} alt="alt" data-tip="BackEnd" data-class="tool-tip" />
-                    <img src={database} alt="alt" data-tip="Database" data-class="tool-tip" />
+                    <img src="https://svgshare.com/i/TNJ.svg" alt="alt" data-tip="FrontEnd" data-class="tool-tip" />
+                    <img src="https://i.ibb.co/wp5wzvY/maintenance.png" alt="alt" data-tip="BackEnd" data-class="tool-tip" />
+                    <img src="https://svgshare.com/i/TP1.svg" alt="alt" data-tip="Database" data-class="tool-tip" />
                   </div>
                 </div>
                 <div className="services-container-content">
-                  <img src="http://www.emilyridge.ie/wp-content/uploads/galway-website-design.png" alt="alt"/>
+                  <img src="https://i.ibb.co/5MqJ0XR/website-design.png" alt="alt"/>
                   <p className="services-header">Web Prototype Design </p>
                   <p>Web Prototype Designs allows developers and users alike to get grasp of their desired visuals. 
                     Through this service, I offer a feature-filled design that will have a memorable effect to 
                     everyone.</p>
                   <div className="services-container-content-img">
-                    <img src={adobe} alt="alt" data-tip="Adobe Photoshop 2021" data-class="tool-tip" />
-                    <img src={adobe2} alt="alt" data-tip="Adobe XD" data-class="tool-tip" />
-                    <img src={figma} alt="alt" data-tip="Figma" data-class="tool-tip" />
+                    <img src="https://svgshare.com/i/TQB.svg" alt="alt" data-tip="Adobe Photoshop 2021" data-class="tool-tip" />
+                    <img src="https://i.ibb.co/ZfyHnXm/1051px-Adobe-XD-CC-icon-svg.png" alt="alt" data-tip="Adobe XD" data-class="tool-tip" />
+                    <img src="https://i.ibb.co/fr1mKX0/220px-Figma-logo-svg.png" alt="alt" data-tip="Figma" data-class="tool-tip" />
                   </div>
                 </div>
               </div>
