@@ -14,7 +14,7 @@ const Projects = () => {
 
   return (
 
-    <Scrollbars universal thumbMinSize={100}>
+    <Scrollbars universal thumbMinSize={100} style={{ minHeight: '100vh' }}>
       <div className="projects-container">
         <div className="margin-container">
           <div className="content-box flex first-element">

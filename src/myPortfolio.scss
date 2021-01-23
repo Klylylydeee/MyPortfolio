@@ -256,6 +256,7 @@ main {
             }
         }
     }
+    // 3
     // Hidden for desktop view
     .mobile-view-container {
         min-height: 100vh;
@@ -265,6 +266,7 @@ main {
         //   @media only screen and (min-width: $breakpoint-lg) {
         //       display: none;
         //   }
+        // 3.1
         .about-container {
             min-height: 100vh;
             width: 100%;
@@ -277,6 +279,7 @@ main {
             @media only screen and (max-width: $breakpoint-xs) {
                 padding: 0rem 0.5rem;
             }
+            // 3.1.1
             &-header {
                 padding: 2.5rem 0rem 2rem 0;
                 @media only screen and (max-width: $breakpoint-lg) {
@@ -331,6 +334,7 @@ main {
                     }
                 }
             }
+            // 3.1.2
             .introduction-content {
                 display: flex;
                 padding: 0 0rem 4rem 0;
@@ -437,6 +441,7 @@ main {
                     }
                 }
             }
+            // 3.1.3
             .quote-content {
                 position: relative;
                 text-align: center;
@@ -495,6 +500,112 @@ main {
                     font-weight: 600;
                     font-size: 1.7rem;
                     color: #222831;
+                }
+            }
+            // 3.1.4
+            .background-content{
+                padding: 2.5rem 0;
+                display: flex;
+                color: #36454f;
+                .background-content-working{
+                    width: 50%;
+                    padding: 0 1rem 0 0;
+                    // Header text
+                    .working-header{
+                        font-family: $fontOne;
+                        font-weight: 600;
+                        font-size: 1.3rem;
+                        padding: 0 0 1rem 0;
+                    }
+                    .working-container{
+                        ul{
+                            font-size: 1rem;
+                            list-style: none;
+                            font-family: $fontThree;
+                            font-weight: 600;
+                            position: relative;
+                            padding: 0 .8rem;
+                            &:after {
+                              transform: translateX(0%) translateY(2%);
+                              content: "";
+                              position: absolute;
+                              right: auto;
+                              bottom: auto;
+                              left: 0;
+                              top: 0;
+                              height: 89%;
+                              width: 5px;
+                              background: $colorThree;
+                              border-radius: 100px;
+                            }
+                            :nth-child(3){
+                                padding: 0 0 .3rem 0;
+                            }
+                            :nth-child(4){
+                                text-align: justify;
+                                font-weight: 100;
+                                padding: 0 0 1rem 0;
+                                font-size: .9rem;
+                            }
+                            li{
+
+                            }
+                        }
+                    }
+                }
+                .background-content-education{
+                    width: 50%;
+                    .education-header{
+                        font-family: $fontOne;
+                        font-weight: 600;
+                        font-size: 1.3rem;
+                        padding: 0 0 1rem 0;
+                    }
+                    .education-container{
+                        ul{
+                            font-size: 1rem;
+                            list-style: none;
+                            font-family: $fontThree;
+                            font-weight: 600;
+                            position: relative;
+                            padding: 0 .8rem;
+                            &:after {
+                              transform: translateX(0%) translateY(2%);
+                              content: "";
+                              position: absolute;
+                              right: auto;
+                              bottom: auto;
+                              left: 0;
+                              top: 0;
+                              height: 89%;
+                              width: 5px;
+                              background: $colorThree;
+                              border-radius: 100px;
+                            }
+                            :nth-child(3){
+                                padding: 0 0 .3rem 0;
+                            }
+                            :nth-child(4){
+                                text-align: justify;
+                                font-weight: 100;
+                                padding: 0 0 1rem 0;
+                                font-size: .9rem;
+                            }
+                            li{
+
+                            }
+                        }
+                    }
+                }
+                @media only screen and (max-width: $breakpoint-lg) {
+                    flex-direction: column;
+                    .background-content-working{
+                        width: 100%;
+                        padding: 0 0 1rem 0;
+                    }
+                    .background-content-education{
+                        width: 100%;
+                    }
                 }
             }
         }
