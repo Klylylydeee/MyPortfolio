@@ -5,7 +5,7 @@ import React, { useEffect, useState, useCallback } from 'react';
 import ReactTooltip from 'react-tooltip';
 import { Scrollbars } from 'react-custom-scrollbars';
 // Pages
-import About from './components/pages/about/About.jsx'
+// import About from './components/pages/about/About.jsx'
 // import Contact from './components/pages/contact/Contact.jsx'
 // import Projects from './components/pages/projects/Projects.jsx'
 // import Skills from './components/pages/skills/Skills.jsx'
@@ -14,6 +14,13 @@ import './components/styles/animationStyles.scss';
 import './components/styles/class.scss';
 import './myPortfolio.scss'
 import video from './assets/Sunrise Over The City - Timelapse 4K - Free 4K Stock Footage -.mkv';
+import video2 from './assets/My Switzerland(1).mp4';
+import adobe from './assets/photoshop.svg';
+import adobe2 from './assets/1051px-Adobe_XD_CC_icon.svg.png';
+import figma from './assets/220px-Figma-logo.svg.png';
+import backend from './assets/maintenance.png';
+import database from './assets/database.svg';
+import frontend from './assets/programming.svg';
 
 const MyPortfolio = () => {
   // State Hooks
@@ -52,14 +59,14 @@ const MyPortfolio = () => {
 
   return (
     <Scrollbars universal thumbMinSize={100} style={{ minHeight: '100vh' }}>
+    <ReactTooltip></ReactTooltip>
       <main>
         {/* 1 */}
         <nav>
           <div className="nav-content">
-            <ReactTooltip />
             <p><a href="/#" data-tip="Press W or ArrowUp key" data-place="bottom" data-effect="solid" data-class="tool-tip" onClick={() => { setPanelState({ isArrowUp: true }) }}>About Me</a></p>
             <p><a href="/#" data-tip="Press A or ArrowLeft key" data-place="bottom" data-effect="solid" data-class="tool-tip" onClick={() => { setPanelState({ isArrowLeft: true }) }}>Skills</a></p>
-            <p><a href="/#" data-tip="Press D or ArrowRight key" data-place="bottom" data-effect="solid" data-class="tool-tip" onClick={() => { setPanelState({ isArrowRight: true }) }}>Project</a></p>
+            <p><a href="/#" data-tip="Press D or ArrowRight key" data-place="bottom" data-effect="solid" data-class="tool-tip" onClick={() => { setPanelState({ isArrowRight: true }) }}>Projects</a></p>
             <p><a href="/#" data-tip="Press S or ArrowDown key" data-place="bottom" data-effect="solid" data-class="tool-tip" onClick={() => { setPanelState({ isArrowDown: true }) }}>Contact</a></p>
             {/* <p><a href="/#">To navigate press Arrow or ASWD keys</a></p> */}
             <button className="nav-content-btn" data-tip="Feature currently unavailable. Please scroll down." data-place="bottom" data-effect="solid" data-class="tool-tip"></button>
@@ -188,9 +195,74 @@ const MyPortfolio = () => {
               </div>
             </div>
           </div>
+          {/* 3.2 Skills*/}
+          <div className="skills-container">
+            {/* 3.2.1 */}
+            <div className="skills-container-header">
+              <div className="skills-container-header-text">
+                <h1>Skills</h1>
+                <span>Skills</span>
+              </div>
+            </div>
+            <div className="skills-content">
+            </div>
+            {/* 3.2.3*/}
+            <div className="services-container">
+              <p className="services-header">Services</p>
+              <div className="services-container-flex">
+                <div className="services-container-content">
+                  <img src="http://www.emilyridge.ie/wp-content/uploads/galway-website-development.png" alt="alt"/>
+                  <p className="services-header">Web Development</p>
+                  <p>Web Prototype Designs allows developers and users alike to get grasp of their desired visuals. 
+                    Through this service, I offer a feature-filled design that will have a memorable effect to 
+                    everyone.</p>
+                  <div className="services-container-content-img">
+                    <img src={frontend} alt="alt" data-tip="FrontEnd" data-class="tool-tip" />
+                    <img src={backend} alt="alt" data-tip="BackEnd" data-class="tool-tip" />
+                    <img src={database} alt="alt" data-tip="Database" data-class="tool-tip" />
+                  </div>
+                </div>
+                <div className="services-container-content">
+                  <img src="http://www.emilyridge.ie/wp-content/uploads/galway-website-design.png" alt="alt"/>
+                  <p className="services-header">Web Prototype Design </p>
+                  <p>Web Prototype Designs allows developers and users alike to get grasp of their desired visuals. 
+                    Through this service, I offer a feature-filled design that will have a memorable effect to 
+                    everyone.</p>
+                  <div className="services-container-content-img">
+                    <img src={adobe} alt="alt" data-tip="Adobe Photoshop 2021" data-class="tool-tip" />
+                    <img src={adobe2} alt="alt" data-tip="Adobe XD" data-class="tool-tip" />
+                    <img src={figma} alt="alt" data-tip="Figma" data-class="tool-tip" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* Source: https://www.youtube.com/watch?v=o77ctsQjRz8 */}
+            <video autoPlay muted loop id="myVideo">
+              <source src={video2} type="video/mp4" />
+            </video>
+          </div>
+          {/* 3.3 Projects*/}
+          <div className="projects-container">
+            {/* 3.3.1 */}
+            <div className="projects-container-header">
+              <div className="projects-container-header-text">
+                <h1>Projects</h1>
+                <span>Projects</span>
+              </div>
+            </div>
+          </div>
+          {/* 3.4 Contact*/}
+          <div className="contacts-container">
+            {/* 3.4.1 */}
+            <div className="contacts-container-header">
+              <div className="contacts-container-header-text">
+                <h1>Contacts</h1>
+                <span>Contacts</span>
+              </div>
+            </div>
+          </div>
         </section>
       </main>
-      <About/>
     </Scrollbars>
   );
 };
