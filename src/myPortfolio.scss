@@ -59,7 +59,7 @@ main {
             position: relative;
             &-name {
                 font-size: 1.25rem;
-                letter-spacing: 0.185rem;
+                letter-spacing: 0.083rem;
                 font-weight: 600;
             }
             @media only screen and (max-width: $breakpoint-lg) {
@@ -699,12 +699,63 @@ main {
                     }
                 }
             }
+            .different-skills-container{
+                display: flex;
+                padding: 0 5rem 2rem 5rem;
+                flex-wrap: wrap ;
+                justify-content: space-evenly; 
+                @media only screen and (max-width: $breakpoint-lg) {
+                    padding: 0 2rem 1.5rem 1rem;
+                }
+                @media only screen and (max-width: $breakpoint-xs) {
+                    padding: 0 0.5rem 0.5rem 0.5rem;
+                }
+                ul:nth-child(3){
+                    li:nth-child(2){
+                        img{
+                            margin: 0 -.35rem;
+                        }
+                    }
+                    li:nth-child(3){
+                        img{
+                            margin: 0 -.5rem;
+                        }
+                    }
+                }
+                ul{
+                    list-style: none;
+                    font-family: $fontOne;
+                    width: 300px;
+                    flex-grow: 4;
+                    margin: .5rem;
+                    font-size: 1.3rem;
+                    font-weight: 600;
+                    padding: 0 0 1rem 0;
+                    @media only screen and (max-width: $breakpoint-lg) {
+                        padding: 0 0 1.5rem 0;
+                    }
+                    li{
+                        font-family: $fontThree;
+                        font-weight: 100;
+                        font-size: 1.2rem;
+                        padding: .8rem 0 0 1rem;
+                        display: flex;
+                        align-items: center;
+                        img{
+                            height: 1.5rem;
+                            width: auto;
+                            padding: 0 .5rem 0 0;
+                        }
+                    }
+                }
+            }
+            // 3.2.2
             .services-container {
                 position: relative;
                 z-index: 2;
-                padding: 0 5rem;
+                padding: 0 5rem 3rem 5rem;
                 @media only screen and (max-width: $breakpoint-lg) {
-                    padding: 0rem 2rem 0 1rem;
+                    padding: 0rem 2rem 3rem 1rem;
                 }
                 @media only screen and (max-width: $breakpoint-xs) {
                     padding: 0rem 0.5rem;
