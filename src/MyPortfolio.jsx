@@ -72,7 +72,7 @@ const MyPortfolio = () => {
         {/* 2 */}
         <section className="hero-container">
           <div className="hero-container-text">
-            <p className="main-hero-text">Welcome to MyPortfolio</p>
+            <p className="main-hero-text">Welcome to <span>MyPortfolio</span></p>
             <p className="ter-hero-text">Scroll down to Navigate</p>
             <p className="sub-hero-text">Let me first explain what I do</p>
             <div className="hero-text-content">

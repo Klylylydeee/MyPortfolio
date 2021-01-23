@@ -155,6 +155,9 @@ main {
                 font-weight: 900;
                 font-size: 3rem;
                 color: #f4f3f3;
+                span{
+                    color: #ffc324;
+                }
             }
             .ter-hero-text{
                 display: none;
@@ -175,7 +178,7 @@ main {
                     padding: 0 0 2rem 0;
                 }
             }
-            @media only screen and (max-width: $breakpoint-sm) {
+            @media only screen and (max-width: $breakpoint-md) {
                 .main-hero-text{
                     padding: .5rem 0;
                 }
@@ -222,7 +225,7 @@ main {
                         width: 100%;
                     }
                 }
-                @media only screen and (max-width: $breakpoint-sm) {
+                @media only screen and (max-width: $breakpoint-md) {
                     flex-direction: column;
                     &-first{
                         display: none;
@@ -301,7 +304,7 @@ main {
                             bottom: 0;
                             height: 5px;
                             width: 100px;
-                            background: rgb(255, 204, 0);
+                            background: #ffc324;
                             border-radius: 100px;
                             z-index: 2;
                         }
@@ -313,7 +316,7 @@ main {
                             bottom: 0;
                             height: 5px;
                             width: 35px;
-                            background: rgb(255, 204, 0);
+                            background: #ffc324;
                             border-radius: 100px;
                             z-index: 2;
                         }
@@ -337,9 +340,9 @@ main {
             // 3.1.2
             .introduction-content {
                 display: flex;
-                padding: 0 0rem 4rem 0;
+                padding: 0 0rem 5rem 0;
                 @media only screen and (max-width: $breakpoint-lg) {
-                    padding: 0 0rem 1.5rem 0;
+                    padding: 0 0rem 2.5rem 0;
                 }
                 @media only screen and (max-width: $breakpoint-xs) {
                     padding: 0rem 0rem 0.5rem 0;
@@ -424,7 +427,7 @@ main {
                         position: absolute;
                         height: 0.5rem;
                         width: 60%;
-                        background-color: #36454f;
+                        background-color: #ffc324;
                         z-index: 2;
                         border-radius: 0 10px 300px 0;
                     }
@@ -434,7 +437,7 @@ main {
                         height: 0.5rem;
                         right: 0;
                         width: 60%;
-                        background-color: #36454f;
+                        background-color: #ffc324;
                         transform: translateY(-100%);
                         z-index: 2;
                         border-radius: 300px 0 0 10px;
@@ -455,47 +458,60 @@ main {
                     content: "";
                     position: absolute;
                     height: 0.2rem;
-                    width: 15rem;
+                    width: 35rem;
                     top: 0;
                     left: 0;
                     right: 0;
                     margin-left: auto;
                     margin-right: auto;
                     text-align: center;
-                    background-color: #36454f;
+                    background-color: #ffc324;
                     z-index: 99;
                     border-radius: 300px;
+                    @media only screen and (max-width: $breakpoint-lg) {
+                        width: 30rem;
+                    }
+                    @media only screen and (max-width: $breakpoint-md) {
+                        width: 20rem;
+                    }
                 }
                 &:after {
                     content: "";
                     position: absolute;
-                    height: 0.2rem;
-                    width: 15rem;
+                    height: 0.25rem;
+                    width: 35rem;
                     bottom: 0;
                     left: 0;
                     right: 0;
                     margin-left: auto;
                     margin-right: auto;
                     text-align: center;
-                    background-color: #36454f;
+                    background-color: #ffc324;
                     z-index: 99;
                     border-radius: 300px;
+                    @media only screen and (max-width: $breakpoint-lg) {
+                        height: 0.20rem;
+                        width: 30rem;
+                    }
+                    @media only screen and (max-width: $breakpoint-md) {
+                        width: 20rem;
+                    }
                 }
                 &-text {
-                    padding: 0.5rem 1rem 0 1rem;
+                    padding: 1rem 1rem 0 1rem;
                     font-family: $fontThree;
                     font-size: 1.5rem;
                     font-weight: 300;
                     color: #222831;
                     @media only screen and (max-width: $breakpoint-md) {
-                        padding: 0.5rem 2rem;
+                        padding: 0.8rem 2rem;
                     }
                     @media only screen and (max-width: $breakpoint-xs) {
                         padding: 0.5rem 2rem;
                     }
                 }
                 &-signature {
-                    padding: 1rem;
+                    padding: 1rem 1rem 1.5rem 1rem;
                     font-family: $fontFour;
                     font-weight: 600;
                     font-size: 1.7rem;
@@ -504,9 +520,15 @@ main {
             }
             // 3.1.4
             .background-content{
-                padding: 2.5rem 0;
+                padding: 6rem 0;
                 display: flex;
                 color: #36454f;
+                @media only screen and (max-width: $breakpoint-lg) {
+                    padding: 4rem 0;
+                }
+                @media only screen and (max-width: $breakpoint-xs) {
+                    padding: 1.5rem 0;
+                }
                 .background-content-working{
                     width: 50%;
                     padding: 0 1rem 0 0;
@@ -546,9 +568,6 @@ main {
                                 font-weight: 100;
                                 padding: 0 0 1rem 0;
                                 font-size: .9rem;
-                            }
-                            li{
-
                             }
                         }
                     }
@@ -590,9 +609,6 @@ main {
                                 font-weight: 100;
                                 padding: 0 0 1rem 0;
                                 font-size: .9rem;
-                            }
-                            li{
-
                             }
                         }
                     }
