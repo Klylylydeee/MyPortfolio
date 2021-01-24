@@ -1,29 +1,29 @@
 // Imported Fonts from Google Fonts
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Hind&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hind&display=swap");
 // Local Fonts
 @font-face {
-    font-family: 'Autograf';
-    src: url('../fonts/Autograf.ttf') format('truetype');
-    font-weight: 300;
-    font-style: normal;
-    font-display: fallback;
-    font-display: swap;
-  }
+  font-family: "Autograf";
+  src: url("../fonts/Autograf.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: fallback;
+  font-display: swap;
+}
 // Variable for Fonts
-$fontOne: 'Montserrat', sans-serif;
-$fontTwo: 'Roboto', sans-serif;
-$fontThree: 'Hind Madurai', sans-serif;
-$fontFour: 'Autograf';
-$fontFive: 'Hind', sans-serif;
+$fontOne: "Montserrat", sans-serif;
+$fontTwo: "Roboto", sans-serif;
+$fontThree: "Hind Madurai", sans-serif;
+$fontFour: "Autograf";
+$fontFive: "Hind", sans-serif;
 
 // Variable for Colors Fade
-$colorOne: #DD4132FF;
-$colorTwo: #9E1030FF;
-$colorThree: #F2CB5B;
-$colorFour: #FCCF14;
+$colorOne: #dd4132ff;
+$colorTwo: #9e1030ff;
+$colorThree: #f2cb5b;
+$colorFour: #fccf14;
 $colorFive: #252422;
 
 $breakpoint-xs: 320px;
@@ -31,6 +31,3 @@ $breakpoint-sm: 576px;
 $breakpoint-md: 768px;
 $breakpoint-lg: 992px;
 $breakpoint-xl: 1200px;
-
-
-

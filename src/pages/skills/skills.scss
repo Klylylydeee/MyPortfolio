@@ -1,6 +1,5 @@
 @import "../../styles/variables.scss";
 
-
 .skills-container {
     // 4.41rem is the total size of the nav, thus this results to almost 90vh of the window at load.
     min-height: 100vh;
@@ -11,7 +10,7 @@
     overflow: hidden;
     user-select: none;
     color: #f4f3f3;
-    z-index: 2;
+    // z-index: 2;
     // 3.2.1
     &-header {
         position: relative;

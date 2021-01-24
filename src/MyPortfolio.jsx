@@ -1,4 +1,4 @@
-// Modules
+// Modules Dependency
 import React, { useEffect, useState, useCallback } from 'react';
 import SlidingPanel from 'react-sliding-side-panel';
 import { PaneContext } from './ContextAPI/PaneContext.jsx'
@@ -10,7 +10,11 @@ import Projects from './pages/projects/Projects.jsx';
 import Skills from './pages/skills/Skills.jsx';
 import Contacts from './pages/contacts/Contacts.jsx';
 import ExitButton from './pages/button/ExitButton.jsx';
-// Styles
+// Animations
+import Fade from 'react-reveal/Fade';
+import Rotate from 'react-reveal/Rotate';
+import Slide from 'react-reveal/Slide';
+// Stylesheets
 import './styles/animationStyles.scss';
 import './styles/class.scss';
 import './myPortfolio.scss'
@@ -37,7 +41,7 @@ const MyPortfolio = () => {
     } else if (event.key === "ArrowRight" || event.key === "d" || event.key === "D") {
       setPanelState({ isArrowDown: false, isArrowUp: false, isArrowLeft: false, isArrowRight: true })
     } else {
-      // setPanelState({ isArrowDown: false, isArrowUp: false, isArrowLeft: false, isArrowRight: false })
+      setPanelState({ isArrowDown: false, isArrowUp: false, isArrowLeft: false, isArrowRight: false })
     }
   }, [setPanelState])
   // To avoid re-render of previous states that causes infinite loops
@@ -74,12 +78,22 @@ const MyPortfolio = () => {
         {/* 2 */}
         <section className="hero-container">
           <div className="hero-container-text">
+            <Slide left delay={200}>
             <p className="main-hero-text">Welcome to <span>MyPortfolio</span></p>
-            <p className="ter-hero-text">If you want to know about me, scroll down.</p>
+            </Slide>
+            <Fade bottom delay={700}>
+            <p className="ter-hero-text">If you want to know more about me, scroll down.</p>
+            </Fade>
+            <Slide left delay={200}>
             <p className="sub-hero-text">Let me first explain what I do</p>
+            </Slide>
             <div className="hero-text-content">
+              <Rotate bottom left  delay={600}>
               <p className="hero-text-content-first"><span>What is a <span>Web Developer </span> ?</span><br />Web developers are found working in various types of organizations, including large corporations and governments, small and medium-sized companies, or alone as freelancers. Some web developers work for one organization as a permanent full-time employee, while others may work as independent consultants, or as contractors for an agency or at home personal use. Web developers typically handle both server-side and front-end logic.</p>
+              </Rotate>
+              <Rotate bottom left  delay={900}>
               <p className="hero-text-content-second"><span>On the other hand, what is a <span>UI Designer </span> ?</span><br />UI designers are responsible for overall user satisfaction with a product. Their priority is to continually look for ways to improve the product experience, even for bestselling products that have been on the market for years. They may do this by making the product faster, easier to use, or more fun and at its core encompasses the entire user experience. A good design is a good experience!</p>
+              </Rotate>
             </div>
           </div>
           {/* Source: https://www.youtube.com/watch?v=i4Dwdo1Q1ds */}
