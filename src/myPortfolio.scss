@@ -108,6 +108,7 @@ main {
                 width: 3rem;
                 background-color: #222831;
                 position: relative;
+                z-index: 0;
                 &::after {
                     content: "";
                     position: absolute;

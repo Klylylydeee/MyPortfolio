@@ -31,7 +31,7 @@ const Projects = () => {
                 <h5>
                   Initially a group project requirement for Advance Web Development but turned into a
                   personal project, nevertheless it helped me to focus and learn different technologies for
-                  both frontend and backend development. Though I consider it as a failure I plan to recreate this in
+                  both frontend and backend technologies. Though I consider it as a failure I plan to recreate this in
                   the near future.
                   </h5>
                 <h5 className="special-h5">

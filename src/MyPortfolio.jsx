@@ -5,10 +5,11 @@ import { PaneContext } from './ContextAPI/PaneContext.jsx'
 import ReactTooltip from 'react-tooltip';
 import { Scrollbars } from 'react-custom-scrollbars';
 // Pages
-import About from './pages/aboutMe/About.jsx'
-import Projects from './pages/projects/Projects.jsx'
-import Skills from './pages/skills/Skills.jsx'
-import Contacts from './pages/contacts/Contacts.jsx'
+import About from './pages/aboutMe/About.jsx';
+import Projects from './pages/projects/Projects.jsx';
+import Skills from './pages/skills/Skills.jsx';
+import Contacts from './pages/contacts/Contacts.jsx';
+import ExitButton from './pages/button/ExitButton.jsx';
 // Styles
 import './styles/animationStyles.scss';
 import './styles/class.scss';
@@ -36,7 +37,7 @@ const MyPortfolio = () => {
     } else if (event.key === "ArrowRight" || event.key === "d" || event.key === "D") {
       setPanelState({ isArrowDown: false, isArrowUp: false, isArrowLeft: false, isArrowRight: true })
     } else {
-      setPanelState({ isArrowDown: false, isArrowUp: false, isArrowLeft: false, isArrowRight: false })
+      // setPanelState({ isArrowDown: false, isArrowUp: false, isArrowLeft: false, isArrowRight: false })
     }
   }, [setPanelState])
   // To avoid re-render of previous states that causes infinite loops
@@ -58,10 +59,10 @@ const MyPortfolio = () => {
         {/* 1 */}
         <nav>
           <div className="nav-content">
-            <p><a href="/#" data-tip="Press W or ArrowUp key" data-place="bottom" data-effect="solid" data-class="tool-tip" onClick={() => { setPanelState({ isArrowUp: true }) }}>About Me</a></p>
-            <p><a href="/#" data-tip="Press A or ArrowLeft key" data-place="bottom" data-effect="solid" data-class="tool-tip" onClick={() => { setPanelState({ isArrowLeft: true }) }}>Skills</a></p>
-            <p><a href="/#" data-tip="Press D or ArrowRight key" data-place="bottom" data-effect="solid" data-class="tool-tip" onClick={() => { setPanelState({ isArrowRight: true }) }}>Projects</a></p>
-            <p><a href="/#" data-tip="Press S or ArrowDown key" data-place="bottom" data-effect="solid" data-class="tool-tip" onClick={() => { setPanelState({ isArrowDown: true }) }}>Contact</a></p>
+            <p><a href="/#" data-tip="Press W or ArrowUp key" data-place="bottom" data-effect="solid" data-class="tool-tip" /*onClick={() => { setPanelState({ isArrowUp: true }) }}*/>About Me</a></p>
+            <p><a href="/#" data-tip="Press A or ArrowLeft key" data-place="bottom" data-effect="solid" data-class="tool-tip" /*onClick={() => { setPanelState({ isArrowLeft: true }) }}*/>Skills</a></p>
+            <p><a href="/#" data-tip="Press D or ArrowRight key" data-place="bottom" data-effect="solid" data-class="tool-tip" /*onClick={() => { setPanelState({ isArrowRight: true }) }}*/>Projects</a></p>
+            <p><a href="/#" data-tip="Press S or ArrowDown key" data-place="bottom" data-effect="solid" data-class="tool-tip" /*onClick={() => { setPanelState({ isArrowDown: true }) }}*/>Contact</a></p>
             {/* <p><a href="/#">To navigate press Arrow or ASWD keys</a></p> */}
             <button className="nav-content-btn" data-tip="Feature currently unavailable. Please scroll down." data-place="bottom" data-effect="solid" data-class="tool-tip"></button>
           </div>
@@ -74,7 +75,7 @@ const MyPortfolio = () => {
         <section className="hero-container">
           <div className="hero-container-text">
             <p className="main-hero-text">Welcome to <span>MyPortfolio</span></p>
-            <p className="ter-hero-text">Scroll down to Navigate</p>
+            <p className="ter-hero-text">If you want to know about me, scroll down.</p>
             <p className="sub-hero-text">Let me first explain what I do</p>
             <div className="hero-text-content">
               <p className="hero-text-content-first"><span>What is a <span>Web Developer </span> ?</span><br />Web developers are found working in various types of organizations, including large corporations and governments, small and medium-sized companies, or alone as freelancers. Some web developers work for one organization as a permanent full-time employee, while others may work as independent consultants, or as contractors for an agency or at home personal use. Web developers typically handle both server-side and front-end logic.</p>
@@ -97,6 +98,8 @@ const MyPortfolio = () => {
           panelClassName="" panelContainerClassName="" noBackdrop={true} >
           <PaneContext.Provider value={{ panelState, setPanelState }}>
             <Scrollbars>
+              <ReactTooltip></ReactTooltip>
+              <ExitButton></ExitButton>
               <About />
             </Scrollbars>
           </PaneContext.Provider>
@@ -105,6 +108,8 @@ const MyPortfolio = () => {
           panelClassName="" panelContainerClassName="" noBackdrop={true} >
           <PaneContext.Provider value={{ panelState, setPanelState }}>
             <Scrollbars>
+              <ReactTooltip></ReactTooltip>
+              <ExitButton></ExitButton>
               <Contacts />
             </Scrollbars>
           </PaneContext.Provider>
@@ -113,6 +118,8 @@ const MyPortfolio = () => {
           panelClassName="" panelContainerClassName="" noBackdrop={true} >
           <PaneContext.Provider value={{ panelState, setPanelState }}>
             <Scrollbars>
+              <ReactTooltip></ReactTooltip>
+              <ExitButton></ExitButton>
               <Projects />
             </Scrollbars>
           </PaneContext.Provider>
@@ -121,6 +128,8 @@ const MyPortfolio = () => {
           panelClassName="" panelContainerClassName="" noBackdrop={true} >
           <PaneContext.Provider value={{ panelState, setPanelState }}>
             <Scrollbars>
+              <ReactTooltip></ReactTooltip>
+              <ExitButton></ExitButton>
               <Skills />
             </Scrollbars>
           </PaneContext.Provider>
