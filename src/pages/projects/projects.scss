@@ -1,0 +1,186 @@
+@import "../../styles/variables.scss";
+
+
+.projects-container {
+  min-height: 100vh;
+  background-color: #ffc324;
+  padding: 0 5rem;
+  user-select: none;
+  @media only screen and (max-width: $breakpoint-lg) {
+      padding: 0rem 2rem 0 1rem;
+  }
+  @media only screen and (max-width: $breakpoint-xs) {
+      padding: 0rem 0.5rem;
+  }
+  // 3.3.1
+  &-header {
+      padding: 2.5rem 0rem 2rem 0;
+      @media only screen and (max-width: $breakpoint-lg) {
+          padding: 2rem 0rem 1.5rem 0;
+      }
+      @media only screen and (max-width: $breakpoint-xs) {
+          padding: 1rem 0rem 0.5rem 0;
+      }
+      &-text {
+          h1 {
+              position: relative;
+              text-transform: uppercase;
+              color: #f4f3f3;
+              &:before {
+                  content: "";
+                  position: absolute;
+                  left: 0;
+                  top: auto;
+                  bottom: 0;
+                  height: 5px;
+                  width: 100px;
+                  background-color: #36454f;
+                  border-radius: 100px;
+                  z-index: 2;
+              }
+              &:after {
+                  content: "";
+                  position: absolute;
+                  left: 0;
+                  top: auto;
+                  bottom: 0;
+                  height: 5px;
+                  width: 35px;
+                  background-color: #36454f;
+                  border-radius: 100px;
+                  z-index: 2;
+              }
+          }
+          span {
+              left: 0;
+              top: 0;
+              font-size: 2.3rem;
+              line-height: 1;
+              font-weight: 900;
+              color: rgba(255, 255, 255, 0.3);
+              text-transform: uppercase;
+              transform: translateY(-60%);
+              z-index: -1;
+              display: inline-block;
+              user-select: none;
+              white-space: nowrap;
+          }
+      }
+  }
+  // 3.3.2
+  .container {
+      .team-items {
+          display: flex;
+          flex-wrap: wrap;
+          flex-basis: 100%;
+          max-width: 100%;
+          justify-content: space-evenly;
+          .item {
+              animation: drop 2s ease;
+              flex-basis: calc(35% - 30px);
+              max-width: calc(85% - 1px);
+              transition: all 0.5s ease;
+              margin-bottom: 40px;
+              @media only screen and (max-width: $breakpoint-md) {
+                  max-width: calc(95% - 1px);
+              }
+              .flex {
+                  justify-content: center;
+                  img {
+                      height: 15rem;
+                      width: auto;
+                      border-radius: 8px;
+                      @media only screen and (max-width: $breakpoint-lg) {
+                          height: 14rem;
+                      }
+                  }
+              }
+              .inner {
+                  position: relative;
+                  padding: 0 3rem;
+                  @media only screen and (max-width: $breakpoint-lg) {
+                      padding: 0 2rem;
+                  }
+                  @media only screen and (max-width: $breakpoint-md) {
+                      padding: 0 1rem;
+                  }
+                  .info {
+                      color: #36454f;
+                      background-color: #f4f3f3;
+                      padding: 2rem 1rem;
+                      border-radius: 8px;
+                      transition: all 0.5s ease;
+                      margin-top: -2rem;
+                      @media only screen and (max-width: $breakpoint-lg) {
+                          padding: 1rem .5rem;
+                      }
+                      // 3.4.1
+                      h3 {
+                          padding: 0 0.5rem;
+                          a {
+                              font-weight: 600;
+                              color: #36454f;
+                              text-transform: none;
+                              text-decoration: none;
+                          }
+                      }
+                      h4 {
+                          font-weight: 600;
+                          padding: 0 0.5rem 10px 0.5rem;
+                      }
+                      h5 {
+                          font-weight: 300;
+                          padding: 0 0.5rem;
+                          display: flex;
+                          text-align: justify;
+                          justify-content: space-evenly;
+                      }
+                      .special-h5 {
+                          justify-content: space-between;
+                          @media only screen and (max-width: $breakpoint-md) {
+                              &-divider:nth-child(1) {
+                                  img:nth-child(2) {
+                                      display: none;
+                                  }
+                                  img:nth-child(3) {
+                                      display: none;
+                                  }
+                              }
+                          }
+                          &-divider {
+                              img {
+                                  padding: 20px 0.1rem 0 0.1rem;
+                                  height: 3.5rem;
+                                  width: auto;
+                              }
+                          }
+                          &-divider:nth-child(2) {
+                              img {
+                                  padding: 20px 0 0 0.1rem;
+                                  height: 3.5rem;
+                                  width: auto;
+                              }
+                          }
+                      }
+                  }
+              }
+              &:hover {
+                  transform: translateY(-10px);
+                  .info {
+                      transform: translateY(-20px);
+                  }
+              }
+          }
+      }
+  }
+  @keyframes drop {
+      0% {
+          opacity: 0;
+          transform: translateY();
+      }
+      100% {
+          opacity: 1;
+          transform: translateY();
+      }
+  }
+}
