@@ -1,0 +1,215 @@
+@import "../../styles/variables.scss";
+
+
+.skills-container {
+    // 4.41rem is the total size of the nav, thus this results to almost 90vh of the window at load.
+    min-height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    background-blend-mode: multiply;
+    position: relative;
+    overflow: hidden;
+    user-select: none;
+    color: #f4f3f3;
+    // 3.2.1
+    &-header {
+        position: relative;
+        z-index: 2;
+        padding: 2.5rem 5rem 2rem 5rem;
+        @media only screen and (max-width: $breakpoint-lg) {
+            padding: 2rem 2rem 1.5rem 1rem;
+        }
+        @media only screen and (max-width: $breakpoint-xs) {
+            padding: 1rem 0.5rem 0.5rem 0.5rem;
+        }
+        &-text {
+            h1 {
+                position: relative;
+                text-transform: uppercase;
+                &:before {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    top: auto;
+                    bottom: 0;
+                    height: 5px;
+                    width: 100px;
+                    background-color: #ffc324;
+                    border-radius: 100px;
+                    z-index: 2;
+                }
+                &:after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    top: auto;
+                    bottom: 0;
+                    height: 5px;
+                    width: 35px;
+                    background-color: #ffc324;
+                    border-radius: 100px;
+                    z-index: 2;
+                }
+            }
+            span {
+                left: 0;
+                top: 0;
+                font-size: 2.3rem;
+                line-height: 1;
+                font-weight: 900;
+                color: rgba(255, 255, 255, 0.3);
+                text-transform: uppercase;
+                transform: translateY(-60%);
+                z-index: -1;
+                display: inline-block;
+                user-select: none;
+                white-space: nowrap;
+            }
+        }
+    }
+    .different-skills-container {
+        display: flex;
+        padding: 0 5rem 2rem 5rem;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        @media only screen and (max-width: $breakpoint-lg) {
+            padding: 0 2rem 1.5rem 1rem;
+        }
+        @media only screen and (max-width: $breakpoint-xs) {
+            padding: 0 0.5rem 0.5rem 0.5rem;
+        }
+        ul:nth-child(3) {
+            li:nth-child(2) {
+                img {
+                    margin: 0 -0.35rem;
+                }
+            }
+            li:nth-child(3) {
+                img {
+                    margin: 0 -0.5rem;
+                }
+            }
+        }
+        .hide-skills {
+            @media only screen and (max-width: $breakpoint-lg) {
+                display: none;
+            }
+        }
+        ul {
+            list-style: none;
+            font-family: $fontOne;
+            width: 300px;
+            flex-grow: 4;
+            margin: 0.5rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+            padding: 0 0 1rem 0;
+            @media only screen and (max-width: $breakpoint-lg) {
+                padding: 0 0 1.5rem 0;
+            }
+            li {
+                font-family: $fontThree;
+                font-weight: 100;
+                font-size: 1.2rem;
+                padding: 0.8rem 0 0 1rem;
+                display: flex;
+                align-items: center;
+                img {
+                    height: 1.5rem;
+                    width: auto;
+                    padding: 0 0.5rem 0 0;
+                }
+            }
+        }
+    }
+    // 3.2.2
+    .services-container {
+        position: relative;
+        z-index: 2;
+        padding: 0 5rem 3rem 5rem;
+        @media only screen and (max-width: $breakpoint-lg) {
+            padding: 0rem 2rem 3rem 1rem;
+        }
+        @media only screen and (max-width: $breakpoint-xs) {
+            padding: 0rem 0.5rem;
+        }
+        .services-header {
+            font-family: $fontOne;
+            font-weight: 600;
+            font-size: 1.3rem;
+            padding: 0 0 1rem 0;
+        }
+        &-flex {
+            color: #36454f;
+            display: flex;
+            justify-content: center;
+            @media only screen and (max-width: $breakpoint-lg) {
+                flex-direction: column;
+            }
+            .services-container-content {
+                background-color: #f4f3f3;
+                border-radius: 30px;
+                width: 35%;
+                margin: 1rem 1rem 1rem 0.5rem;
+                padding: 1rem 1rem 0 1rem;
+                text-align: center;
+                font-family: $fontThree;
+                font-weight: 300;
+                transition: 1s ease;
+                @media only screen and (max-width: $breakpoint-lg) {
+                    width: 100%;
+                }
+                &:hover {
+                    transform: translateY(-7.5%);
+                    @media only screen and (max-width: $breakpoint-lg) {
+                        transform: translateY(-5%);
+                    }
+                }
+                img {
+                    height: 5rem;
+                    width: auto;
+                }
+                // Content header
+                :nth-child(2) {
+                    font-size: 1.3rem;
+                    text-align: center;
+                }
+                p {
+                    font-size: 0.9rem;
+                    text-align: justify;
+                }
+                &-img {
+                    padding: 1rem 0;
+                    text-align: center;
+                    img {
+                        padding: 0 1rem;
+                        height: 2.5rem;
+                        width: auto;
+                        @media only screen and (max-width: $breakpoint-lg) {
+                            height: 2rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #myVideo {
+        position: absolute;
+        right: 0;
+        top: 0%;
+        bottom: 0;
+        min-height: 100%;
+        min-width: auto;
+        z-index: -1;
+        @media only screen and (max-width: $breakpoint-lg) {
+            right: -50%;
+        }
+        @media only screen and (max-width: $breakpoint-md) {
+            right: -225%;
+        }
+        @media only screen and (max-width: $breakpoint-xs) {
+            top: -100%;
+            right: -333%;
+        }
+    }
+}
