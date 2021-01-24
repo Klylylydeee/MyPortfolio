@@ -1,9 +1,10 @@
 // Modules
 import React, { useEffect, useState, useCallback } from 'react';
-// import SlidingPanel from 'react-sliding-side-panel';
-// import { PaneContext } from './components/Contexts/PaneContext.jsx'
+import SlidingPanel from 'react-sliding-side-panel';
+import { PaneContext } from './ContextAPI/PaneContext.jsx'
 import ReactTooltip from 'react-tooltip';
 import { Scrollbars } from 'react-custom-scrollbars';
+// Pages
 import About from './pages/aboutMe/About.jsx'
 import Projects from './pages/projects/Projects.jsx'
 import Skills from './pages/skills/Skills.jsx'
@@ -12,6 +13,7 @@ import Contacts from './pages/contacts/Contacts.jsx'
 import './styles/animationStyles.scss';
 import './styles/class.scss';
 import './myPortfolio.scss'
+// Assets
 import video from './assets/Sunrise Over The City - Timelapse 4K - Free 4K Stock Footage -.mkv';
 
 const MyPortfolio = () => {
@@ -86,11 +88,43 @@ const MyPortfolio = () => {
         </section>
         {/* 3 */}
         <section className="mobile-view-container">
-          <About/>
-          <Skills/>
-          <Projects/>
-          <Contacts/>
+          <About />
+          <Skills />
+          <Projects />
+          <Contacts />
         </section>
+        <SlidingPanel type={'top'} isOpen={panelState.isArrowUp} backdropClicked={() => setPanelState({ isArrowUp: false })} size={100}
+          panelClassName="" panelContainerClassName="" noBackdrop={true} >
+          <PaneContext.Provider value={{ panelState, setPanelState }}>
+            <Scrollbars>
+              <About />
+            </Scrollbars>
+          </PaneContext.Provider>
+        </SlidingPanel>
+        <SlidingPanel type={'bottom'} isOpen={panelState.isArrowDown} backdropClicked={() => setPanelState({ isArrowDown: false })} size={100}
+          panelClassName="" panelContainerClassName="" noBackdrop={true} >
+          <PaneContext.Provider value={{ panelState, setPanelState }}>
+            <Scrollbars>
+              <Contacts />
+            </Scrollbars>
+          </PaneContext.Provider>
+        </SlidingPanel>
+        <SlidingPanel type={'right'} isOpen={panelState.isArrowRight} backdropClicked={() => setPanelState({ isArrowRight: false })} size={100}
+          panelClassName="" panelContainerClassName="" noBackdrop={true} >
+          <PaneContext.Provider value={{ panelState, setPanelState }}>
+            <Scrollbars>
+              <Projects />
+            </Scrollbars>
+          </PaneContext.Provider>
+        </SlidingPanel>
+        <SlidingPanel type={'left'} isOpen={panelState.isArrowLeft} backdropClicked={() => setPanelState({ isArrowLeft: false })} size={100}
+          panelClassName="" panelContainerClassName="" noBackdrop={true} >
+          <PaneContext.Provider value={{ panelState, setPanelState }}>
+            <Scrollbars>
+              <Skills />
+            </Scrollbars>
+          </PaneContext.Provider>
+        </SlidingPanel>
       </main>
     </Scrollbars>
   );
