@@ -569,7 +569,7 @@ main {
                                 padding: 0 0 1rem 0;
                                 font-size: 0.9rem;
                             }
-                            &:hover{
+                            &:hover {
                                 transform: translateX(-2%);
                             }
                         }
@@ -614,7 +614,7 @@ main {
                                 padding: 0 0 1rem 0;
                                 font-size: 0.9rem;
                             }
-                            &:hover{
+                            &:hover {
                                 transform: translateX(-2%);
                             }
                         }
@@ -699,52 +699,57 @@ main {
                     }
                 }
             }
-            .different-skills-container{
+            .different-skills-container {
                 display: flex;
                 padding: 0 5rem 2rem 5rem;
-                flex-wrap: wrap ;
-                justify-content: space-evenly; 
+                flex-wrap: wrap;
+                justify-content: space-evenly;
                 @media only screen and (max-width: $breakpoint-lg) {
                     padding: 0 2rem 1.5rem 1rem;
                 }
                 @media only screen and (max-width: $breakpoint-xs) {
                     padding: 0 0.5rem 0.5rem 0.5rem;
                 }
-                ul:nth-child(3){
-                    li:nth-child(2){
-                        img{
-                            margin: 0 -.35rem;
+                ul:nth-child(3) {
+                    li:nth-child(2) {
+                        img {
+                            margin: 0 -0.35rem;
                         }
                     }
-                    li:nth-child(3){
-                        img{
-                            margin: 0 -.5rem;
+                    li:nth-child(3) {
+                        img {
+                            margin: 0 -0.5rem;
                         }
                     }
                 }
-                ul{
+                .hide-skills {
+                    @media only screen and (max-width: $breakpoint-lg) {
+                        display: none;
+                    }
+                }
+                ul {
                     list-style: none;
                     font-family: $fontOne;
                     width: 300px;
                     flex-grow: 4;
-                    margin: .5rem;
+                    margin: 0.5rem;
                     font-size: 1.3rem;
                     font-weight: 600;
                     padding: 0 0 1rem 0;
                     @media only screen and (max-width: $breakpoint-lg) {
                         padding: 0 0 1.5rem 0;
                     }
-                    li{
+                    li {
                         font-family: $fontThree;
                         font-weight: 100;
                         font-size: 1.2rem;
-                        padding: .8rem 0 0 1rem;
+                        padding: 0.8rem 0 0 1rem;
                         display: flex;
                         align-items: center;
-                        img{
+                        img {
                             height: 1.5rem;
                             width: auto;
-                            padding: 0 .5rem 0 0;
+                            padding: 0 0.5rem 0 0;
                         }
                     }
                 }
@@ -769,14 +774,15 @@ main {
                 &-flex {
                     color: #36454f;
                     display: flex;
+                    justify-content: center;
                     @media only screen and (max-width: $breakpoint-lg) {
                         flex-direction: column;
                     }
                     .services-container-content {
-                        background-color: rgba(255, 197, 36, 0.9);
+                        background-color: #f4f3f3;
                         border-radius: 30px;
-                        width: 50%;
-                        margin: 1rem 1rem 1rem .5rem;
+                        width: 35%;
+                        margin: 1rem 1rem 1rem 0.5rem;
                         padding: 1rem 1rem 0 1rem;
                         text-align: center;
                         font-family: $fontThree;
@@ -785,21 +791,18 @@ main {
                         @media only screen and (max-width: $breakpoint-lg) {
                             width: 100%;
                         }
-                        &:hover{
+                        &:hover {
                             transform: translateY(-7.5%);
                             @media only screen and (max-width: $breakpoint-lg) {
                                 transform: translateY(-5%);
                             }
                         }
                         img {
-                            height: 10rem;
+                            height: 5rem;
                             width: auto;
-                            @media only screen and (max-width: $breakpoint-lg) {
-                                height: 8rem;
-                            }
                         }
                         // Content header
-                        :nth-child(2){
+                        :nth-child(2) {
                             font-size: 1.3rem;
                             text-align: center;
                         }
@@ -907,6 +910,122 @@ main {
                         user-select: none;
                         white-space: nowrap;
                     }
+                }
+            }
+            // 3.3.2
+            .container {
+                .team-items {
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex-basis: 100%;
+                    max-width: 100%;
+                    justify-content: space-evenly;
+                    .item {
+                        animation: drop 2s ease;
+                        flex-basis: calc(35% - 30px);
+                        max-width: calc(85% - 1px);
+                        transition: all 0.5s ease;
+                        margin-bottom: 40px;
+                        @media only screen and (max-width: $breakpoint-md) {
+                            max-width: calc(95% - 1px);
+                        }
+                        .flex {
+                            justify-content: center;
+                            img {
+                                height: 15rem;
+                                width: auto;
+                                border-radius: 8px;
+                                @media only screen and (max-width: $breakpoint-lg) {
+                                    height: 14rem;
+                                }
+                            }
+                        }
+                        .inner {
+                            position: relative;
+                            padding: 0 3rem;
+                            @media only screen and (max-width: $breakpoint-lg) {
+                                padding: 0 2rem;
+                            }
+                            @media only screen and (max-width: $breakpoint-md) {
+                                padding: 0 1rem;
+                            }
+                            .info {
+                                color: #36454f;
+                                background-color: #f4f3f3;
+                                padding: 2rem 1rem;
+                                border-radius: 8px;
+                                transition: all 0.5s ease;
+                                margin-top: -2rem;
+                                @media only screen and (max-width: $breakpoint-lg) {
+                                    padding: 1rem .5rem;
+                                }
+                                // 3.4.1
+                                h3 {
+                                    padding: 0 0.5rem;
+                                    a {
+                                        font-weight: 600;
+                                        color: #36454f;
+                                        text-transform: none;
+                                        text-decoration: none;
+                                    }
+                                }
+                                h4 {
+                                    font-weight: 600;
+                                    padding: 0 0.5rem 10px 0.5rem;
+                                }
+                                h5 {
+                                    font-weight: 300;
+                                    padding: 0 0.5rem;
+                                    display: flex;
+                                    text-align: justify;
+                                    justify-content: space-evenly;
+                                }
+                                .special-h5 {
+                                    justify-content: space-between;
+                                    @media only screen and (max-width: $breakpoint-md) {
+                                        &-divider:nth-child(1) {
+                                            img:nth-child(2) {
+                                                display: none;
+                                            }
+                                            img:nth-child(3) {
+                                                display: none;
+                                            }
+                                        }
+                                    }
+                                    &-divider {
+                                        img {
+                                            padding: 20px 0.1rem 0 0.1rem;
+                                            height: 3.5rem;
+                                            width: auto;
+                                        }
+                                    }
+                                    &-divider:nth-child(2) {
+                                        img {
+                                            padding: 20px 0 0 0.1rem;
+                                            height: 3.5rem;
+                                            width: auto;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        &:hover {
+                            transform: translateY(-10px);
+                            .info {
+                                transform: translateY(-20px);
+                            }
+                        }
+                    }
+                }
+            }
+            @keyframes drop {
+                0% {
+                    opacity: 0;
+                    transform: translateY();
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateY();
                 }
             }
         }
